@@ -1,0 +1,312 @@
+
+<!-- ############ mt apr10 ######################### -->
+<script type="text/javascript">
+function newPopup(url) {
+	popupWindow = window.open(
+		url,'popUpWindow','height=600,width=900,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=no')
+}
+</script>
+<!-- ##################################### -->
+
+
+<div id="content">
+<div id="showcontentlist"><a href="#" onclick="Sichtbar();"><span id="showcontentlisttext">Inhalt anzeigen</span></a></div>
+<div id="hidecontentlist"><a href="#" onclick="Unsichtbar();"><span id="hidecontentlisttext">Inhalt verbergen</span></a></div>
+
+
+<div id="contentlist">
+<ol>
+<li><a href="#representation">Problemstellung</a></li>
+<li><a href="#param">Parameter</a></li>
+<li><a href="#calib">Kalibrierung</a></li>
+<li><a href="#valid">Validierung</a></li>
+<li><a href="#concl">Schlussfolgerung</a></li>
+<li><a href="#ref">Referenzen</a></li>
+</ol>
+</div>
+
+
+
+<div id="contentheader">
+<h1>Verkehrsadaptive Gl&auml;ttungsmethode (ASM)</h1>
+</div>
+
+<div id="usercontent">
+
+<h2 id="representation">Kontinuierliche Verkehrslage in Raum und Zeit</h2>
+
+
+<p>Durch eine detailgetreue Darstellung der Verkehrssituation in Raum und Zeit lassen sich zahlreiche Aspekte der Verkehrsdynamik analysieren. 
+<a href="?site=daten&lang=de#detectors">Station&auml;re Detektoren</a> 
+liefern aber lediglich Daten im Minutentakt an bestimmten Orten (siehe die <a href="html/userimages/A5S_2001_05_28.v2d_dets.de.png">linke Abbildung</a>). Die Rekonstruktion der Verkehrslage besteht darin, aus den 
+an bestimmten Orten zu bestimmten Zeitpunkten vorliegenden <i>diskreten</i> Geschwindigkeitspunkten eine <i>kontinuierliche, mittlere</i> 
+Geschwindigkeit als Funktion des Ortes und der Zeit zu sch&auml;tzen (siehe <a href="html/userimages/A5S_2001_05_28.v2d.de.png">rechte Abbildung</a>).</p> 
+
+<span id="bildlinks">
+<a href="JavaScript:newPopup('html/userimages/A5S_2001_05_28.v2d_dets.de.png');"><img src="html/userimages/A5S_2001_05_28.v2d_dets_small.de.png" alt="Vergr&ouml;&szlig;erung"></a><br><span id="bildunterschrift">Daten station&auml;rer Detektoren</span></span>
+
+<span id="bildrechts">
+<a href="JavaScript:newPopup('html/userimages/A5S_2001_05_28.v2d.de.png');"><img src="html/userimages/A5S_2001_05_28.v2d_small.de.png" alt="Vergr&ouml;&szlig;erung"></a><br><span id="bildunterschrift">Rekonstruierte Geschwindigkeit</span>
+</span>
+
+<br></br>&nbsp;&nbsp;&nbsp;
+
+<p>Eine einfache ("isotrope") Gl&auml;ttung der Daten ist f&uuml;r die
+      Anwendung auf Verkehrsdaten nicht geeignet, da die Abst&auml;nde
+      aufeinanderfolgender Detektorquerschnitte in der Regel oberhalb
+      von 1 km und damit in der Gr&ouml;&szlig;enordnung der
+      Wellenl&auml;ngen der Stauwellen liegen. Dadurch
+ werden diese nicht deutlich voneinander
+      abgesetzt und entstehen  
+Artefakte wie das 
+<a href="JavaScript:newPopup('html/userimages/A9S_1998_10_29_de.isotropic_part.v2d.png');">
+"Eierkarton"-Muster</a>
+ in der linken Abbildung. Die verkehrsadaptive Gl&auml;ttung (<i>Adaptive Smoothing Method, ASM)</i> kann 
+die vorliegenden Stauwellen dagegen detailliert und plausibel rekonstruieren (rechte Abbildung).</p>
+
+<span id="bildlinks">
+<a href="JavaScript:newPopup('html/userimages/A9S_1998_10_29_de.isotropic_part.v2d.png');"><img src="html/userimages/A9S_1998_10_29_de.isotropic_part.v2d_small.png" alt=""></a><br><span id="bildunterschrift">Isotrope Gl&auml;ttung mit Artefakten</span>
+</span>
+
+<span id="bildrechts">
+<a href="JavaScript:newPopup('html/userimages/A9S_1998_10_29_de.anisotropic_part.v2d.png');"><img src="html/userimages/A9S_1998_10_29_de.anisotropic_part.v2d_small.png" alt=""></a><br><span id="bildunterschrift">Verkehrsadaptive Gl&auml;ttung</span>
+</span>
+
+<br></br>&nbsp;&nbsp;&nbsp;
+
+<p>Diese Methode ber&uuml;cksichtigt die empirischer Beobachtung, dass alle
+St&ouml;rungen im Verkehrsfluss, also Geschwindigkeits&auml;nderungen
+      bzw. "Strukturen" in der raumzeitlichen Geschwindigkeitsdarstellung,
+entweder station&auml;r sind oder sich <i>mit einer von zwei bemerkenswert reproduzierbaren
+Geschwindigkeiten ausbreiten</i> (siehe auch <a href="?site=phaenomene&lang=de#stylizedFacts">Stylized Facts</a>):</p>
+
+<ol>
+<li>Im freiem Verkehr breiten sich St&ouml;rungen im
+Wesentlichen <i>mit dem Verkehrsfluss</i> aus. </li>
+<li>Bei gestautem Verkehr breiten sich St&ouml;rungen hingegen
+	<i>entgegen der Fahrtrichtung</i> aus, und zwar mit einer
+	weitgehend konstanten Geschwindigkeit von etwa -15 km/h.</li> 
+</ol>
+
+<p>Die negative Ausbreitungsgeschwindigkeit im Stau kann als Folge der Reaktionen 
+der Fahrer auf das jeweilige Vorderfahrzeug aufgefasst werden. Aus
+	theoretischen &Uuml;berlegung   l&auml;sst sich
+	diese Geschwindigkeit 
+ als effektive Fahrzeugl&auml;nge geteilt durch die mittlere
+	Folgezeitl&uuml;cke darstellen. Nicht nur Stauwellen, sondern
+    auch stromabw&auml;rtigen Fronten ausgedehnter Staus, ja selbst
+    die Position anfahrender Fahrzeuge einer Ampel-Warteschlange nach
+    Gr&uuml;nwerden des Signals, breiten sich mit dieser Geschwindigkeit
+    aus. Siehe auch <a
+      href="?site=methode&lang=de#valid">Validierung</a>.
+</p>
+
+<p>Zur Unterscheidung der beiden Ausbreitungsgeschwindigkeiten wird ein adaptiver Geschwindigkeitsfilter verwendet (Details zum Verfahren 
+in den <a href="?site=methode&lang=de#ref">Referenzen</a>).</p>
+
+<h2 id="param">Parameter</h2>
+<p>Die Parameter der <i>Adaptive Smoothing Method (ASM)</i> f&uuml;r die Erzeugung der Verkehrslagebilder in der Datenbank sind in der folgenden <a href="html/userimages/table_asm_de.png">Tabelle</a> zusammengefasst.</p>
+
+<span id="bildlinks">
+<a href="JavaScript:newPopup('html/userimages/table_asm_de.png');"><img src="html/userimages/table_asm_de.small.png" alt="Parameter"></a><br><span id="bildunterschrift">Parameter der ASM</span>
+</span>
+<p>Die beiden Ausbreitungsgeschwindigkeiten im freien und gestauten Verkehr werden durch die Parameter <i>c<sub>free</sub></i> und <i>c<sub>cong</sub></i> festgelegt. 
+Der Geschwindigkeitsfilter wird durch die &Uuml;bergangsschwelle <i>V<sub>c</sub></i> und die &Uuml;bergangsbreite <i>&Delta;V</i> parametrisiert. 
+Weiterhin sind die rein f&uuml;r die Darstellung verantwortlichen
+    Gl&auml;ttungsparameter <i>&tau;</i> und <i>&sigma;</i>   
+in einem weiten Bereich frei w&auml;hlbar.</p>
+
+
+<h2 id="calib">Kalibrierung</h2>
+<p>Durch eine Variation der Parameterwerte aus der Tabelle
+      l&auml;&szlig;t sich &uuml;berpr&uuml;fen, wie 
+"robust" die Verkehrslagesch&auml;tzung ist bzw. wie sensitiv das
+      Ergebnis von den verwendeten Parameterwerten 
+abh&auml;ngt. Als Referenz dient die obige 
+<a href="html/userimages/A9S_1998_10_29_de.anisotropic_part.v2d.png">
+Abbildung von der A9</a>.</p> 
+
+<h3>Ausbreitungsgeschwindigkeiten</h3>
+
+<p>Im linken Diagramm sind die Ausbreitungsgeschwindigkeiten gegen&uuml;ber den
+Referenzwerten variiert worden: <i>c<sub>free</sub></i> = 200 km/h ist
+    nun zu gro&szlig;
+    und <i>c<sub>cong</sub></i> =-10 km/h betragsm&auml;&szlig;ig zu klein. 
+Im rechten Diagramm gilt hingegen 
+<i>c<sub>free</sub></i> = 200 km/h
+    und <i>c<sub>cong</sub></i> =-20 km/h, beide Werte sind also
+    betragsm&auml;&szlig;ig zu gro&szlig;.
+
+
+<span id="bildlinks">
+<a href="JavaScript:newPopup('html/userimages/ASMtest_cWrong1_ger.png');"> 
+<img src="html/userimages/ASMtest_cWrong1_ger_small.png" alt=""> </a>
+<br>
+<span id="bildunterschrift">Ge&auml;nderte
+	Ausbreitungsgeschwindigkeiten: <i>c<sub>free</sub></i> ist zu
+	gro&szlig; und <i>c<sub>cong</sub></i>
+	betragsm&auml;&szlig;ig zu klein</span>
+</span>
+
+<span id="bildrechts">
+<a href="JavaScript:newPopup('html/userimages/ASMtest_cWrong2_ger.png');"> 
+<img src="html/userimages/ASMtest_cWrong2_ger_small.png" alt=""> </a>
+<br>
+<span id="bildunterschrift">Ge&auml;nderte
+	Ausbreitungsgeschwindigkeiten: <i>c<sub>free</sub></i>
+und <i>c<sub>cong</sub></i>
+	betragsm&auml;&szlig;ig zu gro&szlig;</span>
+</span>
+
+<br></br>&nbsp;&nbsp;&nbsp;
+
+<h3>&Uuml;bergangsparameter</h3>
+<span id="bildlinks">
+<a href="JavaScript:newPopup('html/userimages/ASMtest_transitWrong_ger.png');">
+<img src="html/userimages/ASMtest_transitWrong_ger_small.png" alt=""></a>
+<br>
+<span id="bildunterschrift">Ge&auml;nderter Geschwindigkeitsfilter</span>
+</span>
+
+
+<p>Im nebenstehenden Diagramm wurden hingegen die &Uuml;bergangsparameter
+    des nichtlinearen 
+    Filters ge&auml;ndert: Die Schwelle ist deutlich niedriger 
+(<i>V<sub>c</sub></i> = 40 km/h
+    statt 57 km/h) und die &Uuml;bergangsbreite deutlich gr&ouml;&szlig;er 
+(<i>&Delta;V</i> = 20
+    km/h statt 5 km/h).</p> 
+<p> Wenn man genauer hinsieht, erkennt man, dass hier einige Strukturen
+      statt gestautem Verkehr f&auml;lschlicherweise freien Verkehr
+      zugeordnet wurden, die Stauwellen selbst hingegen kaum
+      ver&auml;ndert sind.</p>
+<br>
+
+<br></br>&nbsp;&nbsp;&nbsp;
+
+<p> Deutlicher sieht man die &Auml;nderungen erst, wenn man zus&auml;tzlich
+      die verf&uuml;gbaren Detektoren weiter ausd&uuml;nnt. In den im Folgenden
+      abgebildeten Beispielen wurden der Methode nur 6 statt der
+      urspr&uuml;nglichen 9 Querschnitte zur Verf&uuml;gung gestellt.
+</p>
+
+<span id="bildlinks">
+<a href="JavaScript:newPopup('html/userimages/A9S_1998_10_29_de.var_speeds.v2d.png');"> 
+<img src="html/userimages/A9S_1998_10_29_de.var_speeds.v2d_small.png" alt=""> </a>
+<br>
+<span id="bildunterschrift">Ge&auml;nderte Ausbreitungsgeschwindigkeiten</span>
+</span>
+
+
+<span id="bildrechts">
+<a href="JavaScript:newPopup('html/userimages/A9S_1998_10_29_de.var_tanh.v2d.png');">
+<img src="html/userimages/A9S_1998_10_29_de.var_tanh.v2d_small.png" alt=""></a>
+<br>
+<span id="bildunterschrift">Ge&auml;nderter Geschwindigkeitsfilter</span>
+</span>
+
+<br></br>&nbsp;&nbsp;&nbsp;
+
+
+<h3>Ergebnis</h3>
+<p>Das Verfahren erwies sich als sehr robust, d.h. das von ihr 
+rekonstruierte  Geschwindigkeitsfeld h&auml;ngt
+      nur schwach von den Werten der Parameter ab. Erst bei
+      Querschnittsabst&auml;nden oberhalb 3 km (wo die konventionelle
+      Gl&auml;ttung bereits vollst&auml;ndig versagt) sieht man bei falsch
+      gew&auml;hlten Werten deutliche Artefakte. Den wichtigste Einfluss
+      hat die angenommene Ausbreitungsgeschwindigkeit <i>c<sub>cong</sub></i> 
+von St&ouml;rungen im gestauten Verkehr. Ein zu hoher Wert wie auch ein zu niedriger Wert (kleiner als 12 km/h)
+f&uuml;hren zu artifiziellen, diskreten Stufen (vgl. die <a
+      href="html/userimages/A9S_1998_10_29_de.var_speeds.v2d.png">linke Abbildung</a>). In der Praxis kann man f&uuml;r Autobahnverkehr die 
+<a href="html/userimages/table_asm_de.png">Tabellenwerte</a> unbesehen
+  &uuml;bernehmen. Achtet man aber auf (f&uuml;r die Lagesch&auml;tzung
+    irrelevanten) Details, kann man umgekehrt durch Minimierung einer
+    geeigneten Fehlerfunktion die genaue Ausbreitungsgeschwindigkeit 
+<i>c<sub>cong</sub></i> auf der jeweiligen Autobahn sch&auml;tzen. </p>
+
+<br>
+
+
+<h2 id="valid">Validierung</h2>
+
+<span id="bildrechts">
+<a
+	href="JavaScript:newPopup('html/userimages/M42N_2008_01_11.rep_dat_v.png');"><img src="html/userimages/M42N_2008_01_11.rep_dat_v_small.png" alt=""></a><br><span id="bildunterschrift">Direkte Darstellung der Daten ("echte" Verkehrslage bzw <i> ground truth</i>)</span> 
+</span>
+
+<p>Trotz der offensichtlichen Robustheit k&ouml;nnte man auf den Gedanken
+      kommen, dass die Logik der Methode zirkul&auml;r ist. Schlie&szlig;lich
+      steckt man mit den Ausbreitungsgeschwindigkeiten
+      <i>c<sub>free</sub></i> und <i>c<sub>cong</sub></i>
+    Informationen in die Methode hinein, die ja eigentlich erst im
+    Ergebnis herauskommen sollen. Eine wissenschaftliche Validierung
+    setzt deshalb einen Vergleich der Sch&auml;tzung mit der zweifelsfrei festgestellten
+    Wirklichkeit, der sogenannten <i> ground truth</i>  voraus. Die
+    Abdeckung mit Detektoren muss also so dicht sein, dass
+die quasi vollst&auml;ndige Information &uuml;ber die Verkehrslage bereits <i>in den Daten</i> vorliegt. Auf einem Streckenabschnitt auf der M42 in England
+haben die Detektoren Abst&auml;nde von lediglich 100 m zueinander. Die <a href="html/userimages/M42N_2008_01_11.rep_dat_v.png">rechte Abbildung</a> 
+zeigt diese Datenpunkte ohne jegliche Interpolation! 
+(Um den km 12 liegen die Detektoren sogar noch dichter, w&auml;hrend wei&szlig;e Streifen auf fehlende Daten hinweisen.)      
+</p>
+<br></br>&nbsp;&nbsp;&nbsp;
+
+<span id="bildlinks">
+<a href="JavaScript:newPopup('html/userimages/validationM42.png');"><img src="html/userimages/validationM42_small.png" alt=""></a><br><span id="bildunterschrift">Interpolierte Verkehrlage bei reduzierter Detektoranzahl</span>
+</span>
+
+<p>Eine M&ouml;glichkeit zur Validierung der verkehrsadaptiven Interpolationsmethode ASM besteht darin, dass
+man sie auf unvollst&auml;ndige Detektordaten anwendet und das
+      Ergebnis mit der <i>ground truth</i> vergleicht. Die <a href="html/userimages/validationM42.png">linke Abbildung</a> 
+zeigt die resultierenden Verkehrslagerekonstruktionen bei Verwendung lediglich jedes 10., 20., 30. bzw. 40. Detektors. Der Detaillierungsgrad nimmt 
+zwar bei der Gl&auml;ttung und Interpolation ab, aber die Annahmen der zwei charakteristischen Geschwindigkeiten im freien und gestauten Verkehr werden 
+auch in der "echten" Verkehrslage beobachtet. In &Uuml;bereinstimmung mit
+    den Robustheitstests ergibt sich eine hinreichende Genauigkeit
+    f&uuml;r Abst&auml;nde bis etwa 3 km.
+
+<h2 id="concl">Schlussfolgerung</h2>
+
+<p>Die adaptive Gl&auml;ttungsmethode ASM  erm&ouml;glicht eine plausible und detailgetreue
+    Rekonstruktion der "echten" Verkehrssituation, wenn benachbarte
+    Messquerschnitte nicht weiter als 3 km auseinander liegen. Die ASM
+    kann auch zur Fusionierung weiterer Punktdatenquellen verwendet
+    werden, wie
+<ul>
+<li> Floating-Car-Daten (FCD),
+<li> Floating-Phone-Daten (FPD),
+<li> Einzelmeldungen von Polizei oder privaten Staumeldern.
+</ul>
+
+    </p>
+
+
+
+<h2 id="ref">Referenzen</h2>
+<ol>
+<li>Martin Treiber, Arne Kesting, R. Eddie Wilson: 
+<i>Reconstructing the traffic state by fusion of heterogeneous data</i>
+Computer-Aided Civil and Infrastructure Engineering 26, 408-419 (2011).
+<a href="http://dx.doi.org/10.1111/j.1467-8667.2010.00698.x">Abstract</a>,
+<a href="http://arxiv.org/abs/0909.4467">Preprint</a>
+<br></br>
+</li>
+
+<li>Arne Kesting, Martin Treiber: 
+<i>Datengest&uuml;tzte Analyse der Stauentstehung und -ausbreitung auf Autobahnen</i>
+Stra&szlig;enverkehrstechnik Heft 01, p. 5-11  (2010).
+<a href="http://www.akesting.de/download/Strassenverkehrstechnik09.pdf">PDF</a>
+<br></br>
+</li>
+
+<li>Martin Treiber, Dirk Helbing: 
+<i>Reconstructing the spatio-temporal traffic dynamics from stationary detector data</i>
+Cooper@tive Tr@nsport@tion Dyn@mics 1 3.1-3.24.
+<a href="http://vwitme011.vkw.tu-dresden.de/TrafficForum/journalArticles/ctd02051401.pdf">PDF</a>
+<br></br>
+</li>
+
+</ol>
+
+</div>
+
+</div>

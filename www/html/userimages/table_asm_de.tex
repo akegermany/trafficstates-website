@@ -1,0 +1,81 @@
+\documentclass[portrait, a0, final]{a0poster}
+%%%%%%%%%%%%%
+%% \tiny, \scriptsize, \footnotesize, \small, \normalsize, \large, \Large,
+%% \LARGE, \huge, \Huge, \veryHuge, \VeryHuge, \VERYHuge 
+%%%%%%%%%%%%
+%% Fuer weitere Hinweise zu "a0poster" siehe Dokumentation "a0.tex".
+%%
+\usepackage{booktabs,units}
+\usepackage{german}
+\usepackage{amsmath, amssymb}  %AMS-Stuff
+\usepackage[latin1]{inputenc}
+\usepackage{exscale}
+\usepackage{multicol}
+\usepackage{helvet}
+\usepackage{ifthen}
+\usepackage{fancybox}
+\usepackage{pifont}
+\usepackage[dvips]{color}
+%%
+\definecolor{jwg}{rgb}{1,0.64705882353,0} % jwg -> das Orange der JWG-Uni
+\definecolor{grau}{rgb}{0.9,0.9,0.9}
+\definecolor{hellgrau}{rgb}{0.935,0.935,0.935}
+\definecolor{gelb}{rgb}{1,1,0.7}
+\definecolor{rot}{rgb}{1,0.875,0.935}
+\definecolor{blau}{rgb}{0.75,0.91,1}
+\definecolor{gruen}{rgb}{0.82,1,0.82}
+\definecolor{webfontcolor}{rgb}{0.1922,0.2471,0.3412}
+%% Ende der Farbdefinitionen.
+\usepackage{epsfig}
+\usepackage{psfrag}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{wrapfig}
+\usepackage{subfigure}
+%% ---------------------------------------------------------
+%% - Verschieben des linken Rands, um den Text zu zentrieren (Vorschlag: -1.0cm)
+\setlength{\oddsidemargin}{-1.0cm}
+%%   Anpassen der Textbreite:
+\addtolength{\textwidth}{1cm}  %%%{1cm}
+%%   Anpassen der Zeilenbreite:
+\addtolength{\linewidth}{1cm}
+%% - Ein Trick, um Seitenumbrueche zu vermeiden
+%\setlength{\textheight}{120cm}
+%% Ende des Konfiguration der Seitenlayouts.
+\setlength{\parindent}{0pt}
+%%
+\sloppy
+%%%%%%%\frenchspacing
+%% \frenchspacing unterdrueckt den Zusatzzwischenraum nach einem Satzzeichen
+%% im nachfolgenden Text.
+%%%%%%%%%\selectlanguage{german}
+\selectlanguage{english}
+
+
+\renewcommand{\baselinestretch}{1.2}
+
+
+\begin{document}
+%%
+\sf
+%% Der Befehl \sf waehlt eine serifenlose Schrift fuer das Poster.
+%%%\large
+\normalsize
+%\large
+\begin{minipage}{35cm}
+\textcolor{webfontcolor}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabular}{ll}
+\toprule Parameter & Wert\\ 
+\midrule 
+Gl\"attungsbreite im Ort $\sigma$ & \unit[600]{m}\\ 
+Gl\"attungsbreite in der Zeit $\tau$  & \unit[40]{s} \\ 
+Geschwindigkeit von St\"orungen im freien Verkehr $c_\text{free}$ & \unit[50]{km/h}\\
+Geschwindigkeit von St\"orungen im gestauten Verkehr $c_\text{cong}$ & \unit[-15]{km/h}\\
+\"Ubergangsschwelle vom freien in gestauten Verkehr $V_\text{thr}$ & \unit[58]{km/h}\\
+\"Ubergangsbreite vom freien in gestauten Verkehr $\Delta V$ & \unit[5]{km/h}\\
+\bottomrule
+\end{tabular}
+}
+\end{minipage}
+\end{document}

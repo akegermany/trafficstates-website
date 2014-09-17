@@ -1,0 +1,575 @@
+body {
+margin: 0 0 0 0;
+background-color: white;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+}
+
+/*Textformatierungen für den HTML-Contentbereich --- müssen nur in der style.css angepasst werden!
+#contentheader h1 {
+font-size: 1.6em;
+}
+#usercontent p {
+color:green;
+}
+#usercontent a {
+color:red;
+}
+#usercontent a:hover{
+color:yellow;
+}
+#usercontent ul{
+color:blue;
+}
+#usercontent ol{
+color:brown;
+}
+#usercontent h1{
+font-size: 1.3em;
+}
+#usercontent h2{
+font-size: 1.2em;
+}
+#usercontent h3{
+font-size: 1.1em;
+}
+#usercontent h4{
+font-size: 1em;
+}
+#contentlist ol a {
+color:green;
+}
+#contentlist ul a{
+color:red;
+}
+#bildunterschrift{
+padding: 0 0 0 0;
+font-size: 0.8em;
+}
+/*Ende Textformatierungen*/
+
+#page{
+   position: relative;
+   top: -3px;
+   left: -3px;
+margin:0 0 0 0; 
+padding: 0 0 0 0;
+width:100%;
+background-color: #F5F3F3; 
+border: 5px solid white;
+}
+#headertext{
+position:absolute;
+font-size:3em;
+top:25px;
+left:27px;
+color:white;
+}
+#headerimage {
+position:absolute;
+top:0px;
+left:0px;
+background-color: white; 
+background-image: url(images/header.jpg); 
+/* border-left: 5px solid white;
+border-top: 5px solid white;*/
+border-bottom: 5px solid white; 
+margin:0px; 
+padding:10px;
+height:80px;
+width:554px;
+min-height:55px;
+overflow:visible;
+float:left;
+}
+#headerextend{
+background-color: white; 
+background-image: url(images/bg_header.png);
+/* border-right: 5px solid white;
+border-top: 5px solid white;*/
+border-bottom: 5px solid white; 
+margin:0 0 0 0; 
+padding:10px;
+height:80px;
+min-height:55px;
+overflow:visible;
+width:100%;
+}
+#language {
+text-align:right;
+margin-right:5px;
+}
+#menu {
+background-color: #313F57;
+padding: 4 10 4 10;
+/* border-right: 5px solid white;
+border-left: 5px solid white; */
+clear:left;
+width:100%;
+}
+#menu a {
+padding:2 5 2 5;
+color:#FFFFFF;
+border: 1px solid #313F57;
+height:0.1em;
+}
+#menu a:hover {
+ background-color:#495F83;
+ border:1px solid #white;
+ height:0.1em;
+}
+#menu table {
+width:100%;
+border: 0px #EEEEEE solid;
+font-size:1.2em;
+}
+#search{
+margin-top:0px;
+width:13.2em;
+background-color: #F5F3F3;
+padding: 10 0 0 0;
+float:left;
+position: relative;
+z-index: 10;
+}
+#searchheader{
+margin:0 0 0 0;
+padding:0 0 0 0;
+}
+#searchtooltip{
+text-align:left;
+display:none;
+position:absolute;
+top:-0.45em;
+left:1.25em;
+color:white;
+background-color:#495F83;
+width:14em;
+height:33em;
+z-index:2000;
+padding: 9 10 10 10;
+margin: 0 0 0 0;
+/*line-height:2.7em;*/
+}
+#searchtooltip p{
+font-size:0.7em;
+}
+#searchtooltip span{
+font-size:0.8em;
+}
+#searchheader table{
+background-color: #495F83;
+height:1.2em;
+margin-top:0px;
+margin-left:-3px;
+color:white;
+font-size:1.2em;
+border:0px;
+}
+#searchheader a {
+position:relative;
+text-decoration:none;
+border: 0px;
+height:1%;
+}
+#searchheader IMG {
+border: 0px;
+}
+#searchheader a:hover #searchtooltip{
+display:block;
+/*position:absolute;
+top:-0.55em;
+left:1.25em;
+color:white;
+background-color:#495F83;
+width:11em;
+height:30em;
+z-index:2000;
+padding: 5 10 10 10;*/
+}
+#comment{
+ border:1px solid #555555;
+ height:20px;
+ font-size:12px;
+}
+#search input{
+width:11em;
+border:none;
+}
+
+#search select{
+color:white;
+background-color: #495F83;
+/*background-color: red;*/
+float:left;
+border:none;
+}
+#searchheader{
+background-color: #495F83;
+padding:5 5 5 10;
+height:2em;
+width:11em;
+color:white;
+font-size:1.2em;
+float:left;
+}
+#searchbody{
+background-color: #8093B3;
+float:left;
+width:100%;
+}
+.searchgroup{
+color:white;
+background-color: #8093B3;
+width:100px;
+float:left;
+}
+.searchgrouptitle{
+font-size:1.2em;
+}
+.searchcrittitle{
+min-width:20px;
+}
+#content {
+background-color: #f3f3f3; 
+width:100%;
+}
+#contentheader {
+padding: 1 0 0 10;
+font-size: 1em;
+}
+/*#usercontentheader {
+padding: 1 0 0 10;
+font-size: 1em;
+}
+*/
+#contentlist {
+margin: 0 0 0 0;
+padding: 1 0 0 10;
+font-size: 1em;
+display:none;
+}
+#showcontentlist{
+margin:10 0 0 0; 
+padding:0 0 0 0;
+height:1.2em;
+display:block;
+}
+#showcontentlist a{
+padding:2 5 2 5;
+color:#000000;
+background-color:#F5F3F3;
+border: 1px solid #313F57;
+text-decoration: none;
+height:1em;
+}
+#showcontentlist a:hover{
+ background-color:#313F57;
+ border:1px solid #495F83;
+}
+#hidecontentlist{
+margin:10 0 0 0; 
+padding:0 0 0 0;
+height:1.2em;
+display:none;
+}
+#hidecontentlist a{
+padding:2 5 2 5;
+color:#000000;
+background-color:#F5F3F3;
+border: 1px solid #313F57;
+text-decoration: none;
+height:1em;
+}
+#hidecontentlist a:hover{
+ background-color:#313F57;
+ border:1px solid #495F83;
+}
+/*#contentheader h2 {
+padding: 18 0 0 0;
+font-size: 1.4em;
+}
+*/
+#contentbody { 
+	padding: 10 0 0 10;
+}
+#usercontent {
+margin:0 0 0 0; 
+padding:0 0 0 10;
+width: 550px;
+}
+#bildrechts{
+margin:10 20 2 20;
+float:right;
+text-align:center;
+}
+#bildlinks{
+margin:10 20 2 0;
+float:left;
+text-align:center;
+}
+
+#picturenavi{
+position:relative;
+top:-38px;
+left:420px;
+width:220px;
+}
+#previousbutton{
+}
+#prevenabled{
+background-image:url(images/blue_left.jpg); 
+width:18px;
+height:15px;
+border:0px;
+}
+#prevdisabled{
+background-image:url(images/black_left.jpg); 
+width:18px;
+height:15px;
+border:0px;
+}
+#nextbutton{
+}
+#nextenabled{
+background-image:url(images/blue_right.jpg); 
+width:18px;
+height:15px;
+border:0px;
+}
+#nextdisabled{
+background-image:url(images/black_right.jpg); 
+width:18px;
+height:15px;
+border:0px;
+}
+#pppdrop{
+}
+#gallerie{
+position:relative;
+top:-50px;
+left:0px;
+width:100%;
+}
+#thumb{
+margin:0 0 0 0;
+height:160px;
+width:220px;
+float:left;
+}
+#thumb IMG {
+}
+DIV.pictext{
+margin-left: 30px;
+}
+#footermenu {
+background-color: #313F57;
+padding: 4 10 4 10;
+/* border-right: 5px solid white;
+
+border-left: 5px solid white;
+border-bottom: 5px solid white; */
+clear:left;
+width:100%;
+}
+#footermenu a {
+padding:2 5 2 5;
+color:#FFFFFF;
+border: 1px solid #313F57;
+height:0.1em;
+}
+#footermenu a:hover {
+ background-color:#495F83;
+ border:1px solid #white;
+ height:0.1em;
+}
+#footermenu table {
+width:100%;
+border: 0px #EEEEEE solid;
+}
+/*table {
+	border: 1px #EEEEEE solid;
+}
+
+th {
+font-size: 14px;
+text-align:left;
+}
+
+td {
+font-size: 12px;
+}
+
+a {
+color: #336699;
+text-decoration: none;
+}
+
+a:hover {
+color: #000000;
+}
+
+a:active#menu {
+color: #000000;
+}
+
+hr {
+	height: 0px;
+}
+*/
+/*Schatteneffekte*/
+DIV.shadow, DIV.shadow2, DIV.shadow3, DIV.shadow4, DIV.shadow5 {
+   padding: 1px;
+   }
+DIV.shadow {
+   background-color: #8e8e8e;
+   border: 1px solid #959595;
+   margin: 0;
+   }
+DIV.shadow2 {
+   background-color: #aaa;
+   border: 1px solid #bebebe;
+   margin: 0;
+   }
+DIV.shadow3 {
+   background-color: #d1d1d1;
+   border: 1px solid #e1e1e1;
+   margin: 0;
+   }
+DIV.shadow4 {
+   background-color: #ededed;
+   border: 1px solid #f6f6f6;
+   margin: 0;
+   }
+DIV.shadow5 {
+   float: left;
+   background-color: #fcfcfc;
+   border: 0px solid transparent;
+   margin: 0 0 0 0;
+   width:100%;
+   }
+DIV.picshad1, DIV.picshad2, DIV.picshad3, DIV.picshad4, DIV.picshad5 {
+  }
+DIV.picshad1 {
+   }
+DIV.picshad2 {
+   }
+DIV.picshad3 {
+   }
+DIV.picshad4 {
+   }
+DIV.picshad5 {
+   }
+
+
+
+
+
+/* body {
+
+margin: 10 30 10 30;
+
+background-color: #DEDEDE;
+
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+
+}
+
+#header {
+background-color: white; 
+background-image: url(images/banner.jpg); 
+border: 5px solid white;
+margin:0px; 
+padding:10px;
+height:80px;
+min-height:55px;
+overflow:visible;
+}
+#language {
+text-align:right;
+margin-right:20px;
+}
+
+#menu {
+background-color: #464F60;
+padding: 4 10 4 10;
+border-right: 5px solid white;
+border-left: 5px solid white;
+}
+
+#menu a {
+color:white;
+}
+
+#menu table {
+width:94%;
+border: 0px #EEEEEE solid;
+}
+
+#content {
+
+background-color: #FFFFFF;
+padding: 10 30 10 30;
+
+}
+
+table {
+	border: 1px #EEEEEE solid;
+}
+
+th {
+font-size: 14px;
+text-align:left;
+}
+
+td {
+font-size: 12px;
+}
+
+a {
+color: #336699;
+text-decoration: none;
+}
+
+a:hover {
+color: #000000;
+}
+
+a:active#menu {
+color: #000000;
+}
+
+hr {
+	height: 0px;
+}
+
+input {
+border:thin #000000 solid;
+padding:3px;
+ font-family: arial, verdana, ms sans serif;
+font-size: 12px;
+}
+
+textarea {
+border:thin #000000 solid;
+padding:3px;
+font-family: arial, verdana, ms sans serif;
+font-size: 12px;
+}
+
+select {
+border:thin #000000 solid;
+font-family: arial, verdana, ms sans serif;
+font-size: 12px;
+}
+
+.checkBoxStyle {
+border:thin #000000 solid;
+}
+
+.altButtonFormat {
+background-color:#EEEEEE;
+}
+
+ */

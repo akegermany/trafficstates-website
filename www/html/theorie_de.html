@@ -1,0 +1,372 @@
+
+<!-- ############ mt apr10 ######################### -->
+<script type="text/javascript">
+function newPopup(url) {
+	popupWindow = window.open(
+		url,'popUpWindow','height=600,width=900,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=no')
+}
+</script>
+<!-- ##################################### -->
+
+
+<div id="content">
+<div id="showcontentlist"><a href="#" onclick="Sichtbar();"><span id="showcontentlisttext">Inhalt anzeigen</span></a></div>
+<div id="hidecontentlist"><a href="#" onclick="Unsichtbar();"><span id="hidecontentlisttext">Inhalt verbergen</span></a></div>
+
+
+<div id="contentlist">
+<ol>
+<li><a href="#jamProperties">Stabilit&auml;tseigenschaften</a></li>
+<li><a href="#stabilityDia">Stabilit&auml;tsdiagramm</a></li>
+<li><a href="#phaseDia">Vom Stabilit&auml;ts- zum Phasendiagramm</a></li>
+<li><a href="#simulation">Phasendiagramme in der Simulation</a></li>
+<li><a href="#empPhase">Phasendiagramme echter Staus</a></li>
+<li><a href="#ref">Referenzen</a></li>
+</ol>
+</div>
+
+
+
+<div id="contentheader">
+<h1>Phasendiagramm der Verkehrszust&auml;nde</h1>
+</div>
+
+<div id="usercontent">
+<p>Die beobachteten Staumuster lassen sich durch ein sogenanntes
+  "Phasendiagramm" erkl&auml;ren. Das Phasendiagramm gibt die Art des Staus in
+  Abh&auml;ngigkeit der Stabilit&auml;tseigenschaften des Verkehrsflusses,
+  des Verkehrsaufkommens und der St&auml;rke der stauverursachenden
+  Engstelle an. Im Fall von simulierten Staus h&auml;ngt das Phasendiagramm auch vom
+    simulierten <i>Fahrstil</i>, also von den Parametern des verwendeten Modells ab.</p>
+
+<h2 id="jamProperties">Stabilit&auml;tseigenschaften</h2>
+<p>Jeder kennt das Ph&auml;nomen: Der Vordermann (oder die Vorderfrau)
+    bremst. Bis man nun selbst reagieren und bremsen kann, ist der
+    Sicherheitsabstand unterschritten. Um den gew&uuml;nschten Abstand wieder zu erreichen,
+    muss man kurzfristig langsamer fahren, also  <i> st&auml;rker</i> abbremsen. Dasselbe geschieht
+    anschlie&szlig;end mit dem Fahrzeug dahinter, welches <i> noch mehr</i>
+    abbremsen muss, bis letztendlich ein "Stau aus dem Nichts"
+    entstanden ist. Dieser Teufelskreis kann bei beliebigem
+    Verkehrsaufkommen durch</p>
+<ul>
+<li> hohe Agilit&auml;t,</li>
+<li> vorausschauendes Fahren,</li>
+<li> und nicht zu kleinem Sicherheitsabstand</li> 
+</ul>
+<p>vermieden bzw. &uuml;berwunden werden.</p> 
+
+<p>Bei geringem Verkehrsaufkommen kommt es unabh&auml;ngig von der Fahrweise
+    nicht zum Aufschaukeln: Dann hat sich ein Fahrer auf Bremsaktionen des Vorderfahrzeugs bereits
+    "eingepegelt", bis sich das n&auml;chste Fahrzeug von hinten
+    n&auml;hert.</p>
+
+<!-- ################################## -->
+<span id="bildlinks">
+<a href="JavaScript:newPopup('html/userimages/IDM_Uxt.png');">
+ <img src="html/userimages/IDM_Uxt_small.png"
+	alt="Illustration der Stabilit&auml;t"></a>
+ <br><span id="bildunterschrift">
+Verschiedene Arten von Instabilit&auml;t
+</span></span>
+<!-- ################################# -->
+
+<p>Die Illustration zeigt diese Instabilit&auml;t durch die Entwicklung der
+    mittleren Geschwindigkeit einer Kolonne von Fahrzeugen in Raum und
+    Zeit, nachdem anfangs am Ort <i>x=0</i> eine kleine St&ouml;rung im
+    Verkehrsfluss stattgefunden hat. (Solche St&ouml;rungen,
+    beispielsweise durch normale Spurwechsel, gibt es immer im realen Verkehr.) 
+    Je nach Agilit&auml;t der Fahrer ist diese Instabilit&auml;t
+    unterschiedlich stark ausgepr&auml;gt:</p>
+<ul>
+
+
+
+<li> <b>Hohe Agilit&auml;t</b> (links oben): Die anf&auml;ngliche
+	  Geschwindigkeitsst&ouml;rung durch leichtes Bremsen eines
+	Fahrzeugs verschwindet mit der Zeit.</li>
+<li> <b> M&auml;&szlig;ig hohe Agilit&auml;t</b> (rechts oben):  Die
+	Geschwindigkeitsschwankungen schaukeln sich auf, jedoch nur in
+	einer Richtung, und zwar <i> entgegen </i> der
+	Fahrtrichtung. Diese milde Form der Kolonneninstabilit&auml;t
+	bezeichnet man auch als <i> konvektive
+	  Instabilit&auml;t</i>. Fr&uuml;her oder sp&auml;ter wird sie n&auml;mlich
+	aus dem System "herausgeschwemmt".</li>
+<li><b> Tr&auml;ge Fahrweise</b> (rechts unten) f&uuml;hrt zu starken
+	Schwankungen, die sich in beide Richtungen ausbreiten und
+	schlie&szlig;lich &uuml;berall zu Stop-and-Go-Verkehr f&uuml;hren.</li>
+</ul>
+
+<!-- <br><br><a href="#content">&rarr;Zum Anfang</a><br><br> -->
+
+<h2 id="stabilityDia">Stabilit&auml;tsdiagramm</h2>
+
+<!-- ################################## -->
+<span id="bildlinks">
+<a href="JavaScript:newPopup('html/userimages/stabdiagIDM_rho_class2.png');">
+ <img src="html/userimages/stabdiagIDM_rho_class2.png"
+	alt="Stabilit&auml;tsdiagramm"></a>
+ <br><span id="bildunterschrift">
+Stabilit&auml;tsdiagramm f&uuml;r eher agile Fahrer
+</span></span>
+<!-- ################################# -->
+
+<!-- ###################### -->
+<span id="bildlinks">
+<a href="javascript:newPopup('html/userimages/stabdiagIDM_rho_class1.png');">
+ <img src="html/userimages/stabdiagIDM_rho_class1.png"
+	alt="Stabilit&auml;tsdiagramm"></a>
+ <br><span id="bildunterschrift">
+Stabilit&auml;tsdiagramm f&uuml;r eher tr&auml;gere Fahrer
+</span></span>
+<!-- ###################### -->
+
+<br>
+<p>Neben dem Fahrstil der Fahrer h&auml;ngt die Stabilit&auml;t
+  auch von der Verkehrsdichte ab. Weiterhin steht die Verkehrsdichte
+    &uuml;ber das sogenannte <i>Fundamentaldiagramm</i>
+    in Beziehung zum 
+  mittleren <i>Verkehrsfluss</i>, also zu der Anzahl der Fahrzeuge, welche
+    pro Zeiteinheit und Spur eine feste Stelle passieren. Beide
+    Eigenschaften lassen sich in sogenannten
+    <i>Stabilit&auml;tsdiagrammen</i> zusammenfassen (links eines f&uuml;r eher agile
+    Fahrer und rechte f&uuml;r tr&auml;gere Fahrer):</p>
+    
+<p>Die Diagramme zeigen einerseits den Verkehrsfluss <i>Q</i> in
+    Abh&auml;ngigkeit der Verkehrsdichte <i>&rho;</i> (schwarze Kurven), also
+    das "Fundamentaldiagramm". Zum Anderen sind, durch senkrechte Linien, die Bereiche
+    angegeben, in der der Verkehr eine der obigen drei Arten der
+    Instabilit&auml;t aufweist:</p>
+
+
+<ul>
+<li> Verkehr ist kolonnenstabil links der roten Geraden (freier
+	Verkehr geringer Dichte). F&uuml;r agilere Fahrer ist er auch
+	rechts der durchgezogenen blauen Linie (nahezu stehender
+	Verkehr) stabil.</li> 
+<li> Verkehr ist konvektiv instabil innerhalb des von <i>&rho;<sub>cv</sub></i> bis
+	<i>&rho;<sub>3</sub></i> abgegrenzten Dichtebereichs,</li>
+<li> Verkehr ist absolut instabil im Dichtebereich zwischen 
+<i>&rho;<sub>2</sub></i> und <i>&rho;<sub>cv</sub></i>. Bei den
+	agileren Fahrern kommt diese Situation allerdings gar nicht vor.</li>
+</ul>
+
+<p>Zus&auml;tzlich gibt es noch <i>metastabile</i> Dichtebereiche zwischen <i>&rho;<sub>1</sub></i> und <i>&rho;<sub>2</sub></i>
+    sowie zwischen <i>&rho;<sub>3</sub></i> und <i>&rho;<sub>4</sub></i>. In diesen Bereichen f&uuml;hrt nur eine starke
+    St&ouml;rung (z.B. eine Vollbremsung) zum Zusammenbruch w&auml;hrend
+    schw&auml;chere St&ouml;rungen verschwinden.</p>
+
+<!--  <br><br><a href="#content">&rarr;Zum Anfang</a><br><br> -->
+
+<h2 id="phaseDia">Vom Stabilit&auml;ts- zum Phasendiagramm</h2>
+
+<p>Das Stabilit&auml;tsdiagramm ist im unendlichen homogenen System
+    (unendlich lange Stra&szlig;e bzw. sehr lange Ringstra&szlig;e)
+    definiert. Nahezu alle Staus auf echten Stra&szlig;en werden aber
+    durch <a href="http://141.30.182.245/trafficstates/?site=phaenomene&lang=de">Engstellen</a>
+    verursacht. Der entscheidende Punkt bei Engstellen ist ihre
+    <i>Durchlasskapazit&auml;t</i> bzw. die <i>Engstellenst&auml;rke</i>.
+    Diese ist als Differenz zwischen der Stra&szlig;enkapazit&auml;t au&szlig;erhalb
+    der Engstelle und der Durchlasskapazit&auml;t definiert. Mit der
+    Durchlasskapazit&auml;t l&auml;sst sich das Stabilit&auml;tsdiagramm auf
+    reale Systeme anwenden. Man muss es allerdings in Abh&auml;ngigkeit des
+    Flusses und nicht der Dichte lesen, also x- und y-Achse vertauschen:</p>
+    
+<ul>
+<li> Bei freiem Verkehr ist die relevante Flussst&auml;rke gleich dem
+	Verkehrsaufkommen bzw. gleich der stromaufw&auml;rtigen Nachfrage
+	auf der Strecke. Die Stabilit&auml;t ist im Stabilit&auml;tsdiagramm <i> links</i>
+	des Flussmaximums, also vom <i>freien Zweig</i> des
+	Fundamentaldiagramms, abzulesen.</li>
+<li> Nach einem Verkehrszusammenbruch ist die Flusst&auml;rke durch die
+	Durchlasskapazit&auml;t der Engstelle gegeben. Die Stabilit&auml;t
+	ist im Stabilit&auml;tsdiagramm <i> rechts</i> 
+	des Flussmaximums, also vom <i>gestauten Zweig</i> des
+	Fundamentaldiagramms, abzulesen.</li>
+</ul>
+
+
+<p>Dadurch ergibt sich, je nach Verkehrsaufkommen, Engstellenst&auml;rke,
+    St&auml;rke der anf&auml;nglichen St&ouml;rung im Verkehrsfluss sowie der
+    Agilit&auml;t der Fahrer, entweder freier Verkehr oder
+    verschiedene Arten gestauten Verkehrs, die sich in charakteristischen
+    Ausbreitungseigenschaften, also den <i>Staumustern</i> in Raum und
+    Zeit, unterscheiden.</p> 
+
+<!-- ###################### -->
+<span id="bildlinks">
+<a href="JavaScript:newPopup('html/userimages/phasediag2bBook_Qrmp.png');">
+<img src="html/userimages/phasediag2bBook_Qrmp_small.png"
+	alt="Phasendiagramm"></a>
+<br><span id="bildunterschrift">Phasendiagramm f&uuml;r eher agile Fahrer
+</span></span>
+<!-- ###################### -->
+
+<p>Jedes dieser Staumuster wird auch
+    als <i>dynamische Phase</i> bezeichnet. Die systematische
+    Auftragung der Staumuster in Abh&auml;ngigkeit der Einflussgr&ouml;&szlig;en
+    (Verkehrsaufkommen, Engstellenst&auml;rke sowie Fahrstilparameter
+    bzw. Modellparameter) wird als <i>Phasendiagramm</i>
+    bezeichnet. </p>
+
+<p>Das abgebildete Phasendiagramm f&uuml;r eine Zufahrt als Engstelle
+    (Engstellenst&auml;rke gleich Rampenfluss <i>Q<sub>rmp</sub></i>) folgt aus
+    dem Stabilit&auml;tsdiagramm f&uuml;r eher agile Fahrer. Es
+    ist f&uuml;r die meisten Autobahnen zutreffend. Die 
+<a href="JavaScript:newPopup('html/userimages/elemPatternsIDM_ger.png');">Staumuster</a>
+    dieses Phasendiagramms
+    lassen sich folgenderma&szlig;en erkl&auml;ren:</p>
+<ol>
+<li><b>Freier Verkehr:</b> Bei geringer St&ouml;rung immer, wenn die Summe der
+	Verkehrsaufkommen Q<sub>main</sub> und <i>Q<sub>rmp</sub></i> auf Hauptsrecke und
+	Zufahrt unterhalb der Kapazit&auml;t <i>Q<sub>max</sub></i> der freien Strecke
+	bleibt. Bei gro&szlig;en St&ouml;rungen (Vollbremsungen, abrupte
+	Spurwechsel etc.) bricht der Verkehr schon wesentlich eher
+	zusammen. Beides folgt aus der Tatsache, dass freier Verkehr am
+	Flussmaximum metastabil und nur f&uuml;r kleinere Fl&uuml;sse
+	(Nachfrage unterhalb uneingeschr&auml;nkt stabil ist.</li>
+<li> <b> Isolierte einzelne laufende Stauwellen ("MLC"):</b> Diese
+	entstehen bei starken St&ouml;rungen im Verkehrsfluss
+	(Jumborennen, starke Bremsungen/Spurwechsel), kleinen
+	Engstellen und einem Verkehrsaufkommen <i>Q<sub>main</sub></i> oberhalb der
+	der Dichte <i>&rho;<sub>1</sub></i> entsprechenden Flusst&auml;rke
+	<i>Q<sub>1</sub></i>. Theoretisch k&ouml;nnen sie auch ohne jede Engstelle als
+	"Stau aus dem Nichts" entstehen, in der Praxis gibt es jedoch
+	immer eine solche, welche als schw&auml;chstes Glied wirkt.</li>
+<li> <b>Homogener, leicht gestauter Verkehr ("HST"):</b> Nur bei Engstellen
+	mit einer Durchlasskapazit&auml;t, welche gr&ouml;&szlig;er als die der
+	Dichte <i>&rho;<sub>2</sub></i> entsprechenden Flusst&auml;rke <i>Q<sub>2</sub></i> ist, also
+	bei minimaler Engstellenst&auml;rke.</li>
+<li> <b>Stop-and-Go-Verkehr ("TSG" und "OCT"):</b> Hier ist die
+	Durchlasskapazit&auml;t kleiner als <i>Q<sub>2</sub></i>. Da der Verkehr aber
+	nur konvektiv instabil ist, wachsen die Stauwellen nur in
+	einer Richtung, n&auml;mlich in ihrer Ausbreitungsrichtung
+	entgegen der Fahrtrichtung. Deshalb herrscht nahe der
+	Engstelle im wesentlichen homogener gebundener
+	Verkehr. Befinden Sie sich also im Stop-and-Go-Verkehr, haben
+	Sie Pech: Es ist noch ein gutes St&uuml;ck bis zur
+	stauverursachenden Engstelle!</li>
+<li> <b>Homogener z&auml;hflie&szlig;ender bis nahezu stehender Verkehr ("HCT"):</b>
+	Bei sehr starken Engstellen mit einer Durchlassf&auml;higkeit
+	unterhalb eines Flusses, welcher im Stabilit&auml;tsdiagramm der
+	Dichte <i>&rho;<sub>3</sub></i> bzw. <i>&rho;<sub>4</sub></i> entspricht. Auf manchen Stra&szlig;en
+	bzw. f&uuml;r manche Modellparameter existiert dieser Bereich
+	nicht, d.h. es bilden sich auch bei sehr hoher Dichte
+	Stauwellen aus (solange der Verkehr nicht vollst&auml;ndig
+	stillsteht).</li>
+<li> <b>Stehende Stauwelle direkt an der Engstelle ("PLC"):</b>Dies ist
+	eine Folge der Metastabilit&auml;t: Zur Entstehung ist eine
+	starke St&ouml;rung im Verkehrsfluss notwendig. Ferner
+ Kombinationen von Verkehrsnachfrage und
+	Engstellenst&auml;rke, welche  auch freien Verkehr zulassen
+	w&uuml;rden.</li>
+</ol>
+
+<br>
+<h2 id="simulation">Phasendiagramm und Staumuster in der Simulation</h2>
+
+
+<!-- ###################### -->
+<span id="bildlinks">
+<a href="JavaScript:newPopup('html/userimages/elemPatternsIDM_ger.png');">
+<img src="html/userimages/elemPatternsIDM_small_ger.png"
+	alt="Staumuster in der IDM-Simulation"></a><br><span
+	id="bildunterschrift">Staumuster simuliert mit dem IDM
+</span></span>
+<!-- ###################### -->
+
+<p>
+Zu sehen sind links die zu den einzelnen Phasen geh&ouml;rigen
+    Staumuster, wie sie aus Simulationen mit dem
+ <a href="IDM">Intelligent-Driver-Model (IDM)</a>
+ resultieren. Die IDM-Modellparameter 
+<i>v<sub>0</sub>=120</i>km/h, <i>T=1</i>s, <i>s<sub>0</sub>=2</i>m, <i>a=1</i>m/s<sup>2</sup>, 
+<i>b=1.5</i>m/s<sup>2</sup> entsprechen dem Stabilit&auml;tsdiagramm
+    f&uuml;r eher agile Fahrer und dem in
+ <a href="#phaseDia">vorhergehenden Kapitel</a> gezeigten Phasendiagramm.</p>
+
+
+
+<!-- ###################### -->
+<span id="bildlinks">
+<a href="JavaScript:newPopup('html/userimages/elemPatternsGKT_ger.png');">
+<img src="html/userimages/elemPatternsGKT_small_ger.png"
+	alt="Staumuster in der GKT-Simulation"></a><br><span
+	id="bildunterschrift">Staumuster,
+	simuliert mit dem GKT-Modell.
+</span></span>
+<!-- ###################### -->
+
+<p>Die Herleitung des Phasendiagramms sollte sowohl f&uuml;r Mikro- als auch
+    f&uuml;r Makromodelle gelten, sofern das Stabilit&auml;tsdiagramm dem in
+    Kapitel  <a href="#stabilityDia">Abschnitt 2</a> entspricht. Die
+    abgebildete Simulation mit dem 
+<a href="GKT">Gaskinetic-Based Traffic Model </a>
+zeigt in der Tat keine wesentlichen Unterschiede.</p>
+
+
+<!--  <br><br><a href="#content">&rarr;Zum Anfang</a><br><br> -->
+<br><br>
+<h2 id="empPhase">Der Test mit der Wirklichkeit: Reale Staumuster</h2>
+
+
+<!-- ###################### -->
+<span id="bildlinks">
+<a href="JavaScript:newPopup('html/userimages/elemPatterns2_ger.png');">
+<img src="html/userimages/elemPatterns2_small_ger.png"
+	alt="Staumuster auf der A5"></a><br><span
+	id="bildunterschrift">Zu den Phasen geh&ouml;rige Staumuster der A5
+</span></span>
+<!-- ###################### -->
+
+<p>Der eigentliche Test muss nat&uuml;rlich mit real gemessenen
+    Verkehrsdaten stattfinden. Tats&auml;chlich lassen sich alle
+    Staumuster in den Querschnittsdaten der Autobahn A5 bei Frankfurt
+    wiederfinden, wenn man die Verkehrslage mit Hilfe der 
+    <a href="?site=methode&lang=de">Verkehrsadaptiven Gl&auml;ttungsmethode</a>
+    rekonstruiert. Die gezeigten Staus sind der Bilder-Datenbank
+    entnommen. Die meisten beobachteten Staus sind allerdings aus diesen
+    "Elementarmustern" zusammengesetzt, siehe die <a
+      href="?site=phaenomene&lang=de">Stylized Facts</a>.</p>
+
+<!--  <br><br><a href="#content">&rarr;Zum Anfang</a><br><br> -->
+
+<h2 id="ref">Referenzen</h2>
+<ol>
+<li>Martin Treiber, Arne Kesting, Dirk Helbing: 
+<i>Three-phase traffic theory and two-phase models with a fundamental diagram in the light of empirical stylized facts</i>,
+Transportation Research Part B: Methodological 44(8-9), 983-1000 (2010).
+<a href="http://dx.doi.org/10.1016/j.trb.2010.03.004">Abstract</a>, 
+<a href="http://arxiv.org/abs/1004.5545">Preprint</a>.
+<br></br>
+</li>
+
+<li>Martin Treiber, Arne Kesting:
+<i></i>Evidence of convective instability in congested traffic flow: A systematic empirical and theoretical investigation</i>
+Transportation Research Part B: Methodological, Transportation Research Part B: Methodological 45, Issue 9, 1362-1377 (2011).
+<a href="http://dx.doi.org/10.1016/j.trb.2011.05.011">Abstract</a>
+<br></br>
+</li>
+
+<li>Dirk Helbing, Martin Treiber, Arne Kesting, Martin Sch&ouml;nhof:
+<i>Theoretical vs. Empirical Classification and Prediction of Congested Traffic States</i>,
+The European Physical Journal B 69, 583-598 (2009).
+<a href="http://dx.doi.org/10.1140/epjb/e2009-00140-5">Abstract</a>, 
+<a href="http://arxiv.org/abs/0903.0929">Preprint</a>.
+<br></br>
+</li>
+
+
+<li>Dirk Helbing, Ansgar Hennecke, Martin Treiber:
+<i>Phase Diagram of Traffic States in the Presence of Inhomogeneities</i>,
+Physical Review Letters 82, 4360-4363 (1999).
+<a href="http://dx.doi.org/10.1103/PhysRevLett.82.4360">Abstract</a>, 
+<a href="http://arxiv.org/abs/cond-mat/9809324">Preprint</a>.
+<br></br>
+</li>
+
+
+
+</ol>
+</div>
+
+</div>

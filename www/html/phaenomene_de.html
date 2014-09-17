@@ -1,0 +1,468 @@
+<!-- ############ mt apr10 ######################### -->
+<script type="text/javascript">
+function newPopup(url) {
+	popupWindow = window.open(
+		url,'popUpWindow','height=600,width=900,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=no')
+}
+</script>
+<!-- ##################################### -->
+
+<div id="content">
+<div id="showcontentlist"><a href="#" onclick="Sichtbar();"><span id="showcontentlisttext">Inhalt anzeigen</span></a></div>
+<div id="hidecontentlist"><a href="#" onclick="Unsichtbar();"><span id="hidecontentlisttext">Inhalt verbergen</span></a></div>
+
+
+<div id="contentlist">
+<ol>
+<li><a href="#ingredients">Drei Zutaten der Stauentstehung</a></li>
+<li><a href="#stylizedFacts">Qualitative Stauformen: Die "Stylized Facts"</a></li>
+<li><a href="#quantities">Quantitative Kenngr&ouml;&szlig;en der Stauentwicklung</a></li>
+<li><a href="#ref">Referenzen</a></li>
+</ol>
+</div>
+
+
+
+<div id="contentheader">
+<h1>Stau-Ph&auml;nomene</h1>
+</div>
+
+<div id="usercontent">
+
+
+<h2 id="ingredients">Drei Zutaten der Stauentstehung</h2>
+<p>Betrachtet man die Gesamtheit der raumzeitlichen
+    Geschwindigkeitsprofile dieser "Stau-Datenbank" (in der linken Eingabemaske
+     "Jedes" ankreuzen), f&auml;llt
+    zun&auml;chst auf, dass nahezu alle Verkehrszusammenbr&uuml;che an einer sogenannten
+    <i>Engstell</i>e entstehen. In den gezeigten Staus sind dies</p>
+<ul>
+<li> <b>Autobahnkreuze:</b>
+ West-Kreuz bei Kilometer 492, Nord-West-Kreuz bei km 488,
+	AK Bad Homburg bei km 480), siehe 
+<a href="html/userimages/sketch_a5.png">Skizze der A5</a>. 
+</li><br>
+<li> <b>Anschluss-Stellen:</b>
+AS Friedberg bei km 471.
+</li><br>
+
+<li> <b>Steigungen und Gef&auml;lle: </b> Auf der
+<a href="html/userimages/sketch_a5.png">A5-Nord</a>
+ bei km 477-478.
+ <!--  , oder auch um den
+<a href="html/userimages/A8EsketchWithOnramp_ger.png">"Irschenberg"</a> 
+auf der A8-Ost. -->
+</li><br>
+<li> <b>Unf&auml;lle:</b> An verschiedenen Stellen, in der Volltextsuche "Unfall"
+	eingeben.
+</li><br>
+
+<li> <b>Sonderf&auml;lle:</b> Beispielsweise sich bewegende Engstellen 
+(<i>moving bottlenecks</i>) durch
+	Schwertransporte oder Rasenm&auml;harbeiten (in der Volltextsuche
+	"moving" eingeben), aber auch 
+<i>verhaltensinduzierte Engstellen</i> durch
+	r&auml;umlich begrenzte Verhaltens&auml;nderungen, 
+	hervorgerufen beispielsweise durch Unf&auml;lle auf der Gegenfahrbahn (hier aber leider 
+keine konklusiven Beispiele in den Daten vorhanden).
+</li>
+</ul>
+
+<!-- ################################## -->
+<span id="bildlinks">
+<!--<a href="JavaScript:newPopup('html/userimages/A5S_2001_09_25.vel_3d.png');">-->
+<a href="html/userimages/A5S_2001_09_25.vel_3d.png"><img src="html/userimages/A5S_2001_09_25.vel_3d_small.png" alt="Beispiel einer Stauentstehung"></a>
+<br><span id="bildunterschrift">Beispiel einer Stauentstehung</span></span>
+<!-- ################################# -->
+
+<p>Weiterhin ist f&uuml;r einen Verkehrsstau ein hinreichend hohes <i>Verkehrsaufkommen</i> notwendig. Denn Staus werden praktisch nie mitten in der Nacht beobachtet,
+    obwohl dann die Engstellen (bis auf diejenigen, die durch Unf&auml;lle oder
+    Sonderf&auml;lle bedingt sind)
+    ebenfalls vorhanden sind. Ferner ben&ouml;tigt jeder Zusammenbruch
+    letztlich einen <i>Ausl&ouml;ser</i> im Verkehrsfluss durch
+    unerwartete bzw. fehlerhafte Fahrman&ouml;ver.</p> 
+    
+    <p>All dies kann man zu
+    den <i>drei Zutaten der Stauentstehung</i> zusammenfassen (vgl. 
+<a href="html/userimages/A5S_2001_09_25.vel_3d.png">nebenstehende
+      Abbildung</a>):</p>
+<ol>
+<li> <b>Hohes Verkehrsaufkommen.</b> In der Abbildung findet der
+	Zusammenbruch beispielsweise  in der
+	morgendlichen Rush-Hour statt.</li>
+<li> <b> Engstelle.</b> Hier spielt die Ausfahrt des Nord-West-Kreuzes
+	Frankfurt diese Rolle.</li>
+<li> <b> St&ouml;rung im Verkehrsfluss.</b> St&ouml;rungen werden verursacht 
+beispielsweise durch abrupte Spurwechselman&ouml;ver, Bremsman&ouml;ver oder "Jumborennen"
+(sich &uuml;berholende LKW blockieren zwei Fahrstreifen).</li>
+</ol>
+
+<p>In der <a href="html/userimages/A5S_2001_09_25.vel_3d.png">nebenstehenden Abbildung</a> 
+ist die St&ouml;rung im Verkehrsfluss  vermutlich ein
+    Jumborennen: Die sich hinter den LKW
+  ansammelnden Fahrzeuge sind durch den dunkelgr&uuml;nen
+	Bereich (entspricht etwa 80 km/h) charakterisiert, der sich (ebenfalls
+	mit 80 km/h) um etwa 7:10 Uhr durch das Streckenabschnitt bewegt. Sobald
+    dieser Schwall an Fahrzeugen bei Kilometer 488 auf die Engstelle
+    trifft, bricht der Verkehr zusammen (hellgr&uuml;ne, gelbe und rote Bereiche).</p>
+
+
+<h2 id="stylizedFacts">Qualitative Stauformen: Die "Stylized Facts"</h2>
+<p>Die in der Bilder-Datenbank gespeicherten Staumuster zeigen, ebenso
+    wie der Verlauf von Staus auf
+    anderen Autobahnen, bemerkenswerte Regelm&auml;&szlig;igkeiten in
+    den zu beobachtenden Staumustern. Auf einer qualitativen Ebene
+    kann man diese zu folgenden <i>idealtypischen Merkmalen</i>
+    bzw. <i>Stylized Facts</i> zusammenfassen:</p>
+
+<!-- ################################## -->
+<span id="bildlinks">
+<!--<a href="JavaScript:newPopup('html/userimages/A9S_1998_10_29.png');">-->
+<a href="html/userimages/A9S_1998_10_29.png"> <img src="html/userimages/A9S_1998_10_29_small.png" alt="A9-S&uuml;d vor M&uuml;nchen: Staus hinter zwei Autobahnkreuzen"></a><br><span id="bildunterschrift">A9-S&uuml;d vor M&uuml;nchen: Ausgedehnte Staus hinter zwei Autobahnkreuzen</span>
+</span>
+<!-- ################################# -->
+
+<!-- ################################## -->
+<span id="bildrechts">
+<!--<a href="JavaScript:newPopup('html/userimages/A5S_2001_06_06.png');">-->
+<a href="html/userimages/A5S_2001_06_06_de.png">
+ <img src="html/userimages/A5S_2001_06_06_de_small.png" alt="A5-S&uuml;d vor Frankfurt: Laufende und stehende Stauwellen"></a><br><span id="bildunterschrift">A5-S&uuml;d vor Frankfurt: Lokalisierte laufende und stehende Stauwellen</span>
+ </span>
+<!-- ################################# -->
+<br>&nbsp;&nbsp;&nbsp;
+
+<h4>(1) Die r&auml;umliche Ausdehnung ist entweder beschr&auml;nkt oder ausgedehnt.</h4>
+<p>Bei einem ausgedehnten  Stau
+<a href="html/userimages/A9S_1998_10_29.png">(obige Abbildung links)</a>
+&auml;ndert sich die Ausdehnung, w&auml;hrend sie bei einem lokalisierten  Stau
+<a href="html/userimages/A5S_2001_06_06_de.png">(obige Abbildung rechts)</a> 
+konstant bleibt. R&auml;umlich begrenzte Staus haben meist eine Ausdehnung von 1-2 km.</p>
+
+<h4> (2) Der Staukopf ist entweder ortsfest<br>oder bewegt sich mit
+	  der konstanten Geschwindigkeit c. </h4>
+
+<p>Dies gilt sowohl f&uuml;r 
+<a href="html/userimages/A5S_2001_06_06_de.png">lokalisierte  Staus </a> 
+als auch f&uuml;r 
+<a href="html/userimages/A9S_1998_10_29.png">ausgedehnte Staus</a>.
+ Bei ausgedehnten Staus kann sich der
+	Staukopf auch pl&ouml;tzlich von einem ortsfesten in einen
+	beweglichen Stau transformieren, wie im 
+ <a href="html/userimages/A9S_1998_10_29.png">Beispiel der A9</a>
+beim vom AK Neufahrn hervorgerufenen Stau um etwa 10:00 Uhr.</p>
+
+<p>Die Geschwindigkeit <i>c</i> (Werte zwischen -15 km/h und -20 km/h)
+ ist &uuml;brigens dieselbe, welche in einer
+ Ampel-Warteschlange den Ort der anfahrenden Fahrzeuge nach
+	Gr&uuml;nwerden beschreibt.</p>
+
+<h4> (3) Die stromaufw&auml;rtige Staufront hat keine feste Geschwindigkeit.</h4>
+
+<!-- ################################## -->
+<span id="bildlinks">
+<!--<a href="JavaScript:newPopup('html/userimages/A8E_1997_07_11.GASM.png');">-->
+<a href="html/userimages/A8E_1997_07_11.GASM.png"><img src="html/userimages/A8E_1997_07_11.GASM_small.png" alt="A8-Ost M&uuml;nchen-Salzburg beim Irschenberg"></a>
+<br><span id="bildunterschrift">A8-Ost M&uuml;nchen-Salzburg beim Irschenberg</span>
+</span>
+<!-- ################################# -->
+
+<p>Je nach Nachfrage (stromaufw&auml;rtiges Verkehrsaufkommen) und Angebot
+    (Durchlasskapazit&auml;t an der Engstelle) kann die Geschwindigkeit
+    zwischen etwa <i>c</i> (-15 km/h bis -20 km/h) und der
+    Grenzgeschwindigkeit <i>v<sub>c</sub></i> zwischen freiem Verkehr und Stau (etwa 50
+    km/h) betragen. Insbesondere ist sie negativ, falls die Nachfrage
+    gr&ouml;&szlig;er als das Angebot ist: der Stau w&auml;chst wie in der
+   <a href="html/userimages/A8E_1997_07_11.GASM.png"> Abbildung</a>
+ bis etwa 19:00 Uhr. Umgekehrt ist etwa ab 19:00 Uhr die Geschwindigkeit positiv: der
+    Stau schrumpft.</p>
+
+<h4>(4) Einheitliche Ausbreitungsgeschwindigkeiten im Stau</h4>
+
+<p>Nahezu alle raumzeitlichen Staumuster weisen Strukturen in Form
+      von Schwingungen oder <i>Stop-and-Go-Wellen</i> auf. Abgesehen von der
+      stromaufw&auml;rtigen Staufront breiten sich diese Strukturen
+      <i>immer (!)</i> mit der Geschwindigkeit <i>c</i> aus. Diese h&auml;ngt
+      geringf&uuml;gig vom Land und vom mittleren Fahrstil der Fahrer ab,
+      jedoch <i>nicht</i> von der Art oder Schwere des Staus.
+Die mikroskopische Verkehrsmodellierung zeigt, dass <i>c</i> dargestellt werden kann durch</p>
+<center>
+<table class="equation"><tr><td class="equation">
+c&nbsp;=&nbsp;-(Fahrzeugl&auml;nge+Mindestabstand) &nbsp;/&nbsp; Nettozeitl&uuml;cke,
+</td></tr></table></center>
+<p>beispielsweise</p>
+<center><table class="equation"><tr><td class="equation">
+c&nbsp;=&nbsp;-(5 m + 2 m)&nbsp;/&nbsp;(1.4 s)&nbsp;=&nbsp;-5 m/s &nbsp;=&nbsp;-18 km/h.
+</td></tr></table></center>
+<p>Dabei muss man jeweils Flotten-Mittelwerte ber&uuml;cksichtigen.
+Da in den USA die Fahrzeuge etwas l&auml;nger sind, ist auch <i>c</i>
+    betragsm&auml;&szlig;ig etwas gr&ouml;&szlig;er.</p>
+
+<h4>(5) In ausgedehnten Staus gibt es entgegen der Fahrtrichtung
+	wachsende Schwingungen.</h4>
+
+<!-- ################################## -->
+<span id="bildlinks">
+<!--<a href="JavaScript:newPopup('html/userimages/A5S_2001_06_11.png');">-->
+<a href="html/userimages/A5S_2001_06_11_de.png">
+ <img src="html/userimages/A5S_2001_06_11_de_small.png" alt="A5-S&uuml;d. Staus verursacht durch eine AS, ein AK und einen Unfall."></a>
+ <br><span id="bildunterschrift">A5-S&uuml;d. Staus (v.l.n.r) durch eine AS, ein AK und einen Unfall.</span>
+ </span>
+<!-- ################################# -->
+<p>Nahe dem Staukopf (bzw. der Engstelle) ist der Verkehrsfluss nahezu
+      station&auml;r (siehe <a href="html/userimages/A5S_2001_06_11.png">nebenstehende Abbildung</a>).
+Aber aus kleinen Schwankungen entstehen mit zunehmender Entfernung vom
+    Staukopf oft mehr oder weniger ausgepr&auml;gte
+<i>Stop-and-Go-Wellen</i>, die sich bis hin zu
+isolierten Stop-and-Go-Wellen verst&auml;rken k&ouml;nnen, aber nicht
+    m&uuml;ssen (unfallbedingter Stau in 
+<a href="html/userimages/A5S_2001_06_11.png">nebenstehender Abbildung</a>).
+In diesem Grenzfall  ist &uuml;brigens eine
+eindeutige Definition einer stromaufw&auml;rtigen Staufront nicht mehr
+sinnvoll und die Stauwellen werden besser als eigenst&auml;ndige
+lokalisierte Staus (&Uuml;bergang von TSG zu MLC, vgl. die  
+<a href="?site=searchhelp&lang=de">Eingabemaske</a> f&uuml;r die Bilderdatenbank) betrachtet.</p> 
+
+<h4>(6) Je st&auml;rker die Engstelle, desto k&uuml;rzer die Wellenl&auml;ngen.</h4>
+
+<p>Im Gegensatz zur Ausbreitungsgeschwindigkeit h&auml;ngt die
+Wellenl&auml;nge der Stauwellen signifikant von der St&auml;rke des Staus
+ab. Die zeitliche Periode nimmt mit der St&auml;rke des Staus ab und
+betr&auml;gt zwischen 4 min und 60 min. Aufgrund der
+charakteristischen Ausbreitungsgeschwindigkeit von
+etwa 15 km/h entspricht dies Wellenl&auml;ngen zwischen 1 und 15 km.</p>
+<p>In den <a href="html/userimages/A9S_1998_10_29.png">Staus auf der A9</a>
+stellt das AK M&uuml;nchen Nord eine gr&ouml;&szlig;ere Engstelle dar als das AK
+      Neufahrn und erzeugt dementsprechend Stauwellen h&ouml;herer
+      Frequenz. Dasselbe gilt f&uuml;r den
+<a href="html/userimages/A8E_1997_07_11.GASM.png">zusammengesetzten
+	Stau auf der A8:</a> Der durch einen Unfall hervorgerufene Stau hat k&uuml;rzere Stauwellen
+      als der Stau durch die Steigungs- und Gef&auml;llezonen des
+      "Irschenbergs".</p>
+
+<h4> (7) Sehr schwache bzw. starke Engstellen k&ouml;nnen homogene
+      Staus (ohne Stauwellen)  erzeugen.</h4>
+
+<p>Geben Sie hierzu in der <a href="?site=searchhelp&lang=de">Volltext-Suchmaske</a> "HST" (homogener
+      synchronizierter Verkehr, entspricht sehr wenig ausgepr&auml;gten
+      Engstellen) oder "HCT" bzw. "Unfall" (sehr starke Engstellen)
+      ein.</p>
+
+<h4 id="moving" >(8) Moving Bottlenecks.</h4>
+
+<!-- ################################## -->
+<span id="bildlinks">
+<!--<a href="JavaScript:newPopup('images/screen/A5N_Wed_2001_08_15.0493_0463.12_20.gasm_v2d.png');">-->
+<a href="images/screen/A5N_Wed_2001_08_15.0493_0463.12_20.gasm_v2d.png"><img src="images/thumbs/tn_A5N_Wed_2001_08_15.0493_0463.12_20.gasm_v2d.png.jpg" alt="Moving Bottleneck auf der A5-Nord"></a><br><span id="bildunterschrift">Moving Bottleneck auf der A5-Nord (mit Verkehrszusammenbruch)</span>
+</span>
+<!-- ################################# -->
+
+<!-- ################################## -->
+<span id="bildlinks">
+<!--<a href="JavaScript:newPopup('images/screen/A5S_Tue_2001_05_22.0465_0492.06_14.gasm_v2d.png');">-->
+<a href="images/screen/A5S_Tue_2001_05_22.0465_0492.06_14.gasm_v2d.png">
+<img src="images/thumbs/tn_A5S_Tue_2001_05_22.0465_0492.06_14.gasm_v2d.png.jpg" alt="Moving Bottleneck auf der A5-S&uuml;d"></a><br><span id="bildunterschrift">Moving Bottleneck auf der A5-S&uuml;d (kein Verkehrszusammenbruch)</span>
+</span>
+<!-- ################################# -->
+&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp;<br>
+<p>Einen Sonderfall stellen <i>bewegliche</i>
+	  Engstellen dar, die beispielsweise durch Rasenm&auml;harbeiten oder
+	Schwertransporte verursacht werden k&ouml;nnen. Geben Sie dazu in
+	der <a href="?site=searchhelp&lang=de">Suchmaske</a> das Schlagwort "moving" ein. Solche Engstellen k&ouml;nnen
+	Staus verursachen (siehe das 
+<a href="images/screen/A5N_Wed_2001_08_15.0493_0463.12_20.gasm_v2d.png">
+Beispiel auf der A5-Nord)</a>, 
+m&uuml;ssen es aber nicht (wie im 
+<a href="images/screen/A5S_Tue_2001_05_22.0465_0492.06_14.gasm_v2d.png">
+Beispiel auf der A5-S&uuml;d</a>).</p>
+
+<p>Falls Staus verursacht werden, widersprechen diese 
+dem <i>Stylized Fact</i> Nr. 2. Man
+	kann diese Regel aber verallgemeinern und so bewegliche
+	Engstellen mit einschlie&szlig;en:</p>
+
+<h5> (2a) Der Staukopf ist entweder am Ort der Engstelle oder er bewegt
+	  sich mit  der konstanten Geschwindigkeit c</h5>
+<p>Auch f&uuml;r <i>moving bottlenecks</i> gelten die anderen <i>Stylized
+      Facts</i> unver&auml;ndert.</p>
+      
+<p>&Uuml;brigens ist bei <i>moving bottlenecks</i> der &Uuml;bergang zur
+<a href="#ingredients">Stauursache 3</a> ("St&ouml;rungen im Verkehrsfluss selbst")
+	flie&szlig;end: Man kann ein Jumborennen sowohl als St&ouml;rung
+    des Verkehrsflusses, als auch ein tempor&auml;res, sich  mit
+	80 km/h bewegendes <i>moving bottleneck</i> auffassen.</p>
+
+<h2 id="quantities">Quantitative Kenngr&ouml;&szlig;en der Stauwellen</h2>
+
+<!-- ################################## -->
+<span id="bildlinks">
+<!-- <a href="JavaScript:newPopup('html/userimages/A5S_2001_05_07_tseries1Fig_ger.png');">-->
+<a href="html/userimages/A5S_2001_05_07_tseries1Fig_ger.png">
+ <img src="html/userimages/A5S_2001_05_07_tseries1Fig_ger_small.png"
+	alt="Wachstumsraten der Stauwellen"></a>
+ <br><span id="bildunterschrift">
+Zeitreihen verschiedener Detektoren
+</span></span>
+<!-- ################################# -->
+
+<p>F&uuml;r ein quantitatives Verst&auml;ndnis der Stauwellen kann man die
+    charakteristischen Merkmale von Stauwellen in ausgedehnten Staus,</p>
+<ul>
+<li> Wachstumsraten,</li>
+<li> Wellenl&auml;ngen,</li>
+<li> und Ausbreitungsgeschwindigkeiten,</li>
+</ul>
+
+<p>in Abh&auml;ngigkeit der Engstellenst&auml;rke untersuchen. Alle vier
+    Gr&ouml;&szlig;en  kann man aus den 
+ <a href="html/userimages/A5S_2001_05_07_tseries1Fig_ger.png">
+Geschwindigkeits-Zeitreihen mehrerer benachbarter
+      Detektor-Querschnitte</a> ermitteln.</p>
+
+<h4> Engstellenst&auml;rke </h4>
+
+<p>Als leicht
+    messbares Kriterium der St&auml;rke der (aktivierten) Engstelle
+    kann man die
+    Geschwindigkeit im Staubereich <i> unmittelbar stromaufw&auml;rts der
+      Engstelle</i> heranziehen. Nach <i> Stylized Fact</i> Nr. 5 sind dort
+    die Geschwindigkeitsschwankungen klein, so dass diese
+    Geschwindigkeit im Allgemeinen wohldefiniert ist. In der <a href="html/userimages/A5S_2001_05_07_tseries1Fig_ger.png">Abbildung</a>
+w&auml;re dies beispielsweise die vom Detektor bei Kilometer 481
+      gemessene Geschwindigkeit w&auml;hrend des Zusammenbruchs (etwa 40 km/h).
+Offensichtlich gilt: Je
+    geringer die Geschwindigkeit, desto gr&ouml;&szlig;er die
+    Engstellenst&auml;rke (vgl. <a href="?site=theorie&lang=de#phaseDia">
+Herleitung des Phasendiagramms, Abschnitt 3</a>). </p> 
+
+
+<h4> Ausbreitungsgeschwindigkeit </h4>
+
+<!-- ################################## -->
+<span id="bildlinks">
+<!-- <a href="JavaScript:newPopup('html/userimages/patternPropagVel_ger.png');">-->
+<a href="html/userimages/patternPropagVel_ger.png"><img src="html/userimages/patternPropagVel_ger_small.png" alt="Ausbreitungsgeschwindigkeit der Stauwellen"></a><br><span id="bildunterschrift">Ausbreitungsgeschwindigkeit der Stauwellen</span>
+</span>
+<!-- ################################# -->
+
+<!-- ################################## -->
+<span id="bildrechts">
+<!-- <a href="JavaScript:newPopup('html/userimages/patternWavelength_ger.png');">-->
+<a href="html/userimages/patternWavelength_ger.png"><img src="html/userimages/patternWavelength_ger_small.png" alt="Wellenl&auml;ngen der Stauwellen"></a><br><span id="bildunterschrift">Wellenl&auml;ngen der Stauwellen</span>
+</span>
+<!-- ################################# -->
+
+&nbsp;&nbsp;&nbsp;<br></br>
+
+<p>Aus den  <a href="html/userimages/A5S_2001_05_07_tseries1Fig_ger.png">Zeitreihen</a>
+erh&auml;lt man durch Verschiebung der Zeitstempel benachbarter
+    Zeitreihen bis zur gr&ouml;&szlig;tm&ouml;glichen
+    &Uuml;bereinstimmung (Maximum 
+    der verschobenen Kreuzkorrelation, zugeh&ouml;rige Zeitverschiebung
+    &tau;<sub>shift</sub>)  die
+    Fortpflanzungsgeschwindigkeit</p>
+
+<center><table class="equation"><tr><td class="equation">
+Ausbreitungsgeschwindigkeit <i>c</i> &nbsp;=&nbsp; <i>&tau;<sub>shift</sub></i> &nbsp;/&nbsp; Detektorabstand.
+</td></tr></table></center>
+<p>Eine <a href="html/userimages/patternPropagVel_ger.png">Auswertung der
+      Daten der Bilddatenbank</a> ergab sowohl f&uuml;r ausgedehnte Staus
+    (OCT/TSG) als auch f&uuml;r lokalisierte laufende Stauwellen (MLC; all diese
+    Bezeichnungen k&ouml;nnen in die 
+<a href="?site=searchhelp&lang=de">Suchmaske</a> eingegeben werden)
+ weitgehend &uuml;bereinstimmende
+    Fortpflanzungs-Geschwindigkeiten. Dies ist in Einklang mit
+ <i>Stylized Fact</i> Nr. 4.</p>
+
+
+<h4> Wellenl&auml;nge </h4>
+<p>Aus den  <a href="html/userimages/A5S_2001_05_07_tseries1Fig_ger.png">Zeitreihen</a>
+erh&auml;lt man direkt die mittlere Periode <i>&tau;</i> der Schwingungen. Diese sind 
+    im Bereich abzulesen, in dem die Schwingungen sich zwar deutlich von
+    statistischen Schwankungen unterscheiden, aber noch nicht
+    ges&auml;ttigt sind (f&uuml;r den 
+<a href="html/userimages/A5S_2001_05_07_tseries1Fig_ger.png">hier abgebildeten Fall</a>
+    liegt der Bereich zwischen km 474 und 477). Mit Hilfe der
+    Ausbreitungsgeschwindigkeit <i>c</i> ergibt sich daraus die 
+    Wellenl&auml;nge <i>&lambda;</i>:</p>
+
+<center><table class="equation"><tr><td class="equation">
+Wellenl&auml;nge <i>&lambda;</i> &nbsp;=&nbsp; |<i>c</i>| &#183; <i>&tau;</i>
+</td></tr></table></center>
+
+<p>Eine Auswertung der Daten der Bilddatenbank ergibt die 
+<a href="html/userimages/patternWavelength_ger.png">abgebildete Abh&auml;ngigkeit</a>
+der Wellenl&auml;nge von der St&auml;rke der Engstelle: F&uuml;r gro&szlig;e
+    St&auml;rken ergibt sich ein minimaler Wert von etwa 1.5 km (Eingabe von "OCT" in
+    die <a href="?site=searchhelp&lang=de">Suchmaske</a>), f&uuml;r kleinere Engstellen
+    (entsprechend Fahrzeuggeschwindigkeiten beim Staukopf oberhalb von
+    etwa 25 km/h)  w&auml;chst die Wellenl&auml;nge, bis man schlie&szlig;lich
+    einzelne Stauwellen (<a href="?site=searchhelp&lang=de">Suchmasken-Eingabe</a> "TSG") erh&auml;lt. Alle diese Ergebnisse 
+    sind in &Uuml;bereinstimmung mit <i>Stylized Fact</i> Nr. 6.</p>
+
+<h4> Wachstumsrate </h4>
+
+<!-- ################################## -->
+<span id="bildlinks"> 
+<!-- <a href="JavaScript:newPopup('html/userimages/patternGrowthrate_ger.png');">-->
+<a href="html/userimages/patternGrowthrate_ger.png">
+ <img src="html/userimages/patternGrowthrate_ger_small.png" 
+	alt="Wachstumsraten der Stauwellen"></a> 
+ <br><span id="bildunterschrift">
+Wachstumsraten der Stauwellen
+</span></span>
+<!-- ################################# -->
+
+<p>Schlie&szlig;lich kann man noch die Wachstumsrate der Stauwellen aus den
+<a href="html/userimages/A5S_2001_05_07_tseries1Fig_ger.png">Zeitreihen</a>
+ bestimmen. Ebenso wie bei der Messung der Wellenl&auml;nge geschieht
+    dies im Bereich, in dem die Schwingungen sich deutlich von
+    statistischen Schwankungen unterscheiden, aber noch nicht
+    ges&auml;ttigt sind (im Beispiel zwischen km 474 und 477): Ansonsten kann man
+    die Wachstumsrate entweder nicht bestimmen (lediglich statistisches
+    Rauschen) oder sie geht gegen Null (S&auml;ttigung). 
+    In ausreichendem Abstand zur  S&auml;ttigungsgrenze ist das  Wachstum
+    in guter N&auml;herung exponentiell. F&uuml;r die mittlere Amplitude <i>A</i> der
+    Geschwindigkeitsschwankungen gilt also</p>
+
+<center><table class="equation"><tr><td class="equation">
+<i>A</i> &nbsp;=&nbsp;<i>A<sub>0</sub></i> &#183; e<sup><i>&sigma;(t-t<sub>0</sub>)</i></sup>.
+</td></tr></table></center>
+
+<p>&Uuml;ber die bereits bei der Ermittlung der Ausbreitungsgeschwindigkeit
+    <i>c</i> ben&ouml;tigten Zeitverschiebung <i>&tau;<sub>shift</sub></i> zur optimalen
+    &Uuml;bereinstimmung benachbarter Detekorzeitreihen l&auml;sst sich
+    die Wachstumsrate somit durch die Amplituden <i>A<sub>up</sub></i> und <i>A<sub>down</sub></i>
+    der Geschwindigkeitsschwankungen dieser Detektoren sch&auml;tzen:</p>
+
+<center><table class="equation"><tr><td class="equation">
+<i>&sigma;</i> &nbsp;=&nbsp; 1/<i>&tau;</i><sub>shift</sub> &#183; ln(<i>A<sub>up</sub></i>/<i>A<sub>down</sub></i>).
+</td></tr></table></center>
+
+<p>Das <a href="html/userimages/patternGrowthrate_ger.png">Ergebnis</a>
+    ist in &Uuml;bereinstimmung mit den <i>Stylized Facts</i> Nr. 5 und
+    7: Positive Wachstumsraten (wachsende Stauwellen) f&uuml;r die
+    meisten Engstellenst&auml;rken und negative Wachstumsraten f&uuml;r
+    freien Verkehr. Allerdings kann man negative Wachstumsraten schwer
+    messen, da dann keine mit obiger Gleichung auswertbaren
+    systematischen Schwankungen existieren.</p>
+ 
+<h2 id="ref">Referenzen</h2>
+<ol>
+<li>Dirk Helbing, Martin Treiber, Arne Kesting, Martin Sch&ouml;nhof:
+<i>Theoretical vs. Empirical Classification and Prediction of Congested Traffic States</i>,
+The European Physical Journal B 69, 583-598 (2009).
+<a href="http://dx.doi.org/10.1140/epjb/e2009-00140-5">Abstract</a>, 
+<a href="http://arxiv.org/abs/0903.0929">Preprint</a>.
+<br></br>
+</li>
+
+<li>Martin Treiber, Arne Kesting, Dirk Helbing: 
+<i>Three-phase traffic theory and two-phase models with a fundamental diagram in the light of empirical stylized facts</i>,
+Transportation Research Part B: Methodological 44(8-9), 983-1000 (2010).
+<a href="http://dx.doi.org/10.1016/j.trb.2010.03.004">Abstract</a>, 
+<a href="http://arxiv.org/abs/1004.5545">Preprint</a>.
+<br></br>
+</li>
+</ol>
+</div>
+</div>

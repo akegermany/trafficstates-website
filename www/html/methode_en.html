@@ -1,0 +1,378 @@
+
+<!-- ############ mt apr10 ######################### -->
+<script type="text/javascript">
+function newPopup(url) {
+	popupWindow = window.open(
+		url,'popUpWindow','height=600,width=900,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=no')
+}
+</script>
+<!-- ##################################### -->
+
+
+<div id="content">
+<div id="showcontentlist"><a href="#" onclick="Sichtbar();"><span id="showcontentlisttext">show contents</span></a></div>
+<div id="hidecontentlist"><a href="#" onclick="Unsichtbar();"><span id="hidecontentlisttext">hide contents</span></a></div>
+
+
+<div id="contentlist">
+<ol>
+<li><a href="#representation">Reconstructing the Spatiotemporal Speed Profile: Problem Statement</a></li>
+<li><a href="#param">Parameter</a></li>
+<li><a href="#calib">Calibration</a></li>
+<li><a href="#valid">Validation</a></li>
+<li><a href="#concl">Conclusion</a></li>
+<li><a href="#ref">References</a></li>
+</ol>
+</div>
+
+
+
+<div id="contentheader">
+<h1>The Adaptive Smoothing Method (ASM)</h1>
+</div>
+
+<div id="usercontent">
+
+<h2 id="representation">Reconstructing the Spatiotemporal Speed Profile: Problem Statement</h2>
+
+
+<p>
+A detailled representation of the traffic situation in
+      space and time allows to analyze numerous aspects of traffic
+      dynamics and traffic theory. However, the commonly available 
+<a href="?site=daten&lang=en#detectors">stationary detectors</a> 
+only provide information at certain locations and at given time
+      instances (every minute, in our case), see the following
+ <a href="html/userimages/A5S_2001_05_28.v2d_dets.en.png">image on the
+	left</a>. 
+The task of the reconstruction consists in estimating the values of
+      the local speed (or other traffic-related quantities) <emph>
+      at all locations and times</emph> inside a certain
+    spatiotemporal investigation region, such as in the following
+<a href="html/userimages/A5S_2001_05_28.v2d.en.png">
+image on the right</a>. 
+
+<span id="bildlinks">
+<a
+	href="JavaScript:newPopup('html/userimages/A5S_2001_05_28.v2d_dets.en.png');"><img src="html/userimages/A5S_2001_05_28.v2d_dets.en_small.png" alt="enlargement"></a><br><span id="bildunterschrift">Aggregated speed data of stationary detectors</span></span>
+
+<span id="bildrechts">
+<a
+	href="JavaScript:newPopup('html/userimages/A5S_2001_05_28.v2d.en.png');"><img src="html/userimages/A5S_2001_05_28.v2d.en_small.png" alt="enlargement"></a><br><span id="bildunterschrift">Reconstructed spatiotemporal speed profile</span>
+</span>
+
+<br></br>&nbsp;&nbsp;&nbsp;
+
+<p>
+A simple independent local smoothing and interpolation
+ (e.g., by separately applying moving averages in space and time, or by
+      assuming the value of the data point which is nearest to the
+       point (x,t) for which the speed should be determined) is not
+      suited since the spacing between two neighboring detector
+      stations is of the same order as the typical dimension of
+      traffic patterns such as the wavelength of stop-and-go
+      waves. Consequently, these simple methods lead to artifacts such
+      as the 
+<a href="JavaScript:newPopup('html/userimages/A9S_1998_10_29_de.isotropic_part.v2d.png');">
+checkerboard pattern</a> of the image to the left. In contrast, the traffic-adaptive
+      interpolation with the <i>Adaptive Smoothing Method, ASM)</i>
+      takes care of dynamic invariants of the correlations of  traffic
+      patterns (constant propagation velocities of perturbations in
+      free and congested traffic, see the 
+<a href="?site=phaenomene&lang=en#stylizedFacts">Stylized Facts</a>)
+leading to plausible results as shown in
+      the right-hand image of the following figure).</p>
+
+<span id="bildlinks">
+<a
+	href="JavaScript:newPopup('html/userimages/A9S_1998_10_29_en.isotropic_part.v2d.png');"><img src="html/userimages/A9S_1998_10_29_en.isotropic_part.v2d_small.png" alt=""></a><br><span id="bildunterschrift">Independent interpolation/smoothing of space and time leading to artifacts</span>
+</span>
+
+<span id="bildrechts">
+<a
+	href="JavaScript:newPopup('html/userimages/A9S_1998_10_29_en.anisotropic_part.v2d.png');"><img src="html/userimages/A9S_1998_10_29_en.anisotropic_part.v2d_small.png" alt=""></a><br><span id="bildunterschrift">Interpolation/smoothing with the adaptive smoothing method</span>
+</span>
+
+<br></br>&nbsp;&nbsp;&nbsp;
+
+<p>
+Specifically, this method makes use of the empirical observation that all
+      macroscopic perturbations of traffic flow (such as changes of
+      the local speed) either are stationary, or propagate with one of
+      two characteristic 
+      velocities
+ (see <a href="?site=phaenomene&lang=en#stylizedFacts">Stylized Facts</a>):</p>
+
+<ol>
+<li>In free traffic flow, perturbations propagate essentially with the
+	vehicles, i.e., the propagation velocity is equal to the local
+	speed average. </li>
+<li>In congested traffic, perturbations propagate 
+	<i>against the driving direction</i> at a remarkably constant
+	velocity of about  -15 km/h. </li> 
+</ol>
+
+<p>The negative velocity of perturbations in congestions can be
+      understood in terms of the driver reactions: Specifically, the
+      absolute value of the velocity is essentially given by the average effective car
+      length (car length + minimum gap in standing traffic) divided by
+      the average time gap in car-following mode.
+This means, the velocity depends weakly on
+	the average driving style and traffic composition but
+	does <i> not</i> change with  the type of
+      congestion. Specifically, the same value applies for
+<ul>
+<li>stop-and go waves, 
+<li> perturbations inside extended
+      jams, 
+<li> moving downstream fronts of extended jams, 
+<li>  location of the starting vehicles in a queue behind a
+      traffic light after the light turned green.
+</ul>
+See also the section on <a
+      href="?site=methode&lang=en#valid">validation</a>.
+</p>
+
+<p>The two nonzero propagation velocities for free and congested
+      traffic are discriminated by a nonlinear speed filter (for
+      details, see the  <a href="?site=methode&lang=en#ref">references</a>).</p>
+
+
+
+
+<h2 id="param">Parameters</h2>
+<p>The parameters of the ASM used for generating the images of the
+     data base are given in following  <a href="html/userimages/table_asm_de.png">table</a>.</p>
+
+<span id="bildlinks">
+<a
+	href="JavaScript:newPopup('html/userimages/table_asm_en.png');"><img src="html/userimages/table_asm_en.small.png" alt="Parameter"></a><br><span id="bildunterschrift">ASM parameters</span>
+</span>
+
+
+<p>The two nonzero propagation velocities are denoted by the
+      parameters  <i>c<sub>free</sub></i> und <i>c<sub>cong</sub></i>. 
+The nonlinear speed filter is parametrized by the threshold speed
+    <i>V<sub>c</sub></i>, and the threshold width <i>&Delta;V</i> . 
+Furthermore, the smoothing parameters  <i>&tau;</i> and <i>&sigma;</i>   
+(which only control the representation ) can be chosen in a wide range.</p>
+
+
+<h2 id="calib">Calibration and Sensitivity Analysis</h2>
+<p>
+By variation of the parameters, we did a sensitivity analysis and
+      tested the robustness of the adaptive soothing method with
+      respect to the parameter settings.
+As reference case, we chose the
+<a href="html/userimages/A9S_1998_10_29_en.anisotropic_part.v2d.png"> 
+speed profile of a congestion on Oct 29, 1998 on the
+      German freeway A9-South to the north of Munich</a>.</p> 
+
+<h3>Sensitivity with respect to the assumed propagtion velocities</h3>
+
+<p>
+
+
+The left image of the figure below shows the speed profile after
+      changing the propagation velocity <i>c<sub>free</sub></i> from
+    its reference value 50 km/h to  200 km/h, and
+    <i>c<sub>cong</sub></i> from its reference value -15 km/h to -10 km/h. 
+In the right image, we assumed <i>c<sub>free</sub></i> = 200 km/h as
+    well, and  <i>c<sub>cong</sub></i> =-20 km/h.
+
+
+<span id="bildlinks">
+<a href="JavaScript:newPopup('html/userimages/ASMtest_cWrong1.png');"> 
+<img src="html/userimages/ASMtest_cWrong1_small.png" alt=""> </a>
+<br>
+<span id="bildunterschrift">Speed profile generated by the ASM after changing 
+<i>c<sub>free</sub></i> from 50 km/h to 200 km/h, and
+	<i>c<sub>cong</sub></i> from -15 km/h to -10 km/h</span> 
+</span>
+
+<span id="bildrechts">
+<a href="JavaScript:newPopup('html/userimages/ASMtest_cWrong2.png');"> 
+<img src="html/userimages/ASMtest_cWrong2_small.png" alt=""> </a>
+<br>
+<span id="bildunterschrift">Speed profile of the ASM after changing 
+<i>c<sub>free</sub></i> from 50 km/h to 200 km/h, and
+	<i>c<sub>cong</sub></i> from -15 km/h to -20 km/h</span>
+</span>
+
+<br></br>&nbsp;&nbsp;&nbsp;
+
+<h3>Parameters of the nonlinear speed filter</h3>
+
+<span id="bildlinks">
+<a href="JavaScript:newPopup('html/userimages/ASMtest_transitWrong.png');">
+<img src="html/userimages/ASMtest_transitWrong_small.png" alt=""></a>
+<br>
+<span id="bildunterschrift"> Speed profile generated by the ASM after changing 
+<i>V<sub>c</sub></i> from 54 km/h to 40 km/h,
+and <i>&Delta;V</i> from 5 km/h to 20 km/h</span>
+</span>
+
+
+<p>The image on the left side shows the result of the ASM after
+      "detuning" the parameters of the speed filter. The transition
+      speed has been reduced by 14 km/h, while the width of the transition zone
+      has been increased by a factor of four. </p> 
+<p> On a closer look, one recognizes that some structures has been
+      attributed to free instead of congested traffic, a consequence of
+      the changed transition speed which is now too low. The
+      stop-and-go waves themselves, however, are displayed with only
+      insignificant changes.</p>
+<br>
+
+<br></br>&nbsp;&nbsp;&nbsp;
+
+<p> Of course, the sensitivity with respect to the parameters settings
+      increases with the distance between two neighboring detector
+      cross sections. For example, the following figure shows the
+      result when feeding the ASM with data of only six of the nine
+      detector cross sections.
+</p>
+
+<span id="bildlinks">
+<a href="JavaScript:newPopup('html/userimages/A9S_1998_10_29_en.var_speeds.v2d.png');"> 
+<img src="html/userimages/A9S_1998_10_29_en.var_speeds.v2d_small.png" alt=""> </a>
+<br>
+<span id="bildunterschrift">Only six detectors, changed propagation
+	speed parameters</span>
+</span>
+
+
+<span id="bildrechts">
+<a href="JavaScript:newPopup('html/userimages/A9S_1998_10_29_en.var_tanh.v2d.png');">
+<img src="html/userimages/A9S_1998_10_29_en.var_tanh.v2d_small.png" alt=""></a>
+<br>
+<span id="bildunterschrift">Only six detectors, changed speed filter
+	parameters </span>
+</span>
+
+<br></br>&nbsp;&nbsp;&nbsp;
+
+
+<h3>Result</h3>
+<p>
+The method turned out to be very robust, i.e., the reconstructed speed
+      profile depends only weakly on the parameter settings, even if
+      obviously incorrect values are assumed.
+Only for distances of more than 3 km between neighboring detectors
+      (where the conventional moving averaging fails completely) one
+      sees significant artifacts as a function of the parameter values
+      when the parameters deviate more than 10-20% from the values in
+      the table. The highest
+      sensitivity is associated with the propagation speed  <i>c<sub>cong</sub></i>.
+Deviations from the calibrated value by more than 2 km/h lead to
+    artificial steps (cf. <a
+      href="html/userimages/A9S_1998_10_29_en.var_speeds.v2d.png">the
+      image to the left</a>). 
+For practical purpose, the
+<a href="html/userimages/table_asm_en.png">reference values</a> for
+    freeway traffic can be assumed without further calibration. 
+
+Nevertheless, the method can also be applied for the opposite problem:
+    Estimating the propagation speeds from the data. In this case, the
+    propagation speed is estimated by minimizing an appropriate error functional. </p>
+
+<br>
+
+
+<h2 id="valid">Validation</h2>
+
+<span id="bildrechts">
+<a
+	href="JavaScript:newPopup('html/userimages/M42N_2008_01_11.rep_dat_v.png');"><img src="html/userimages/M42N_2008_01_11.rep_dat_v_small.png" alt=""></a><br><span id="bildunterschrift">Direct plot of speed data ("ground truth") of a congestion on the British motorway M42. Here, the detectors are so dense (maximum spacing 100 m) that the data can be plotted without any data manipulation. 
+</span> 
+</span>
+
+<p>
+In spite of the obvious robustness, one cannot exclude that the logic
+      of the ASM contains circular reasoning. After all, one input to
+      the method is the value  <i>c<sub>cong</sub></i> of the
+    propagation velocities of stop-and-go waves while the
+    spatiotemporal pattern of the waves themselves is output of the method.
+Therefore, a scientific validation is necessary, i.e., a comparison of
+    the estimated speed profile with the independently determined real
+    situation (<i> "ground truth"</i>). In order to perform such a
+    validation, one needs a freeway section equipped with so many
+    detectors such
+ that the essentially complete information (<i> "ground truth"</i>) is
+    already in the data. 
+
+Fortunately, such sections exist. On the motorway M42 in England, the
+    spacing between two detector cross sections is 100 m (or even
+    less) allowing a direct plot of the data 
+<i>without any manipulation</i>,
+    see the 
+ <a href="html/userimages/M42N_2008_01_11.rep_dat_v.png">right
+      image</a> (white stripes denote spatiotemporal
+    regions with detector errors; notice that compensation of data errors is
+    another possible application of the ASM).
+
+</p>
+<br></br>&nbsp;&nbsp;&nbsp;
+
+<span id="bildlinks">
+<a
+	href="JavaScript:newPopup('html/userimages/validationM42.png');"><img src="html/userimages/validationM42_small.png" alt=""></a><br><span id="bildunterschrift">estimated traffic state derived from the ASM with reduced information: Only the data of every 10th, 20th, 30th, or 40th detector are provided.</span>
+</span>
+
+<p>In the validation process, the ASM is applied on an incomplete data
+      set and the result is compared with the ground truth. The 
+<a href="html/userimages/validationM42.png">figure to the left</a>
+      shows the result after providing the ASM with data of every
+      10th, 20th, 30th, or 40th detector station corresponding to
+      inter-detector spacings between 1 km and 4 km. 
+We observe that the level of detail decreases with the distance
+      between two detectors. Nevertheless, the essential features are
+      retained up to a distance of about 3 km. 
+
+<h2 id="concl">Conclusion</h2>
+
+<p>
+The adaptive smoothing method ASM allows a plausible and detailled
+      reconstruction of the true traffic situation from stationary
+      detectors if their distance is 3 km or less. Extensions of the
+      ASM allow the inclusion and fusion of further point data sources such
+      as 
+<ul>
+<li> Floating-Car-Data (FCD),
+<li> Floating-Phone-Data (FPD),
+<li> Event-oriented isolated message from authorities or private car drivers.
+</ul>
+
+    </p>
+
+
+
+<h2 id="ref">References</h2>
+<ol>
+<li>Martin Treiber, Arne Kesting, R. Eddie Wilson: 
+<i>Reconstructing the traffic state by fusion of heterogeneous data</i>
+Computer-Aided Civil and Infrastructure Engineering 26, 408-419 (2011).
+<a href="http://dx.doi.org/10.1111/j.1467-8667.2010.00698.x">Abstract</a>,
+<a href="http://arxiv.org/abs/0909.4467">Preprint</a>
+<br></br>
+</li>
+
+<li>Arne Kesting, Martin Treiber: 
+<i>Datengest&uuml;tzte Analyse der Stauentstehung und -ausbreitung auf Autobahnen</i>
+Stra&szlig;enverkehrstechnik Heft 01, p. 5-11  (2010).
+<a href="http://www.akesting.de/download/Strassenverkehrstechnik09.pdf">PDF</a>
+<br></br>
+</li>
+
+<li>Martin Treiber, Dirk Helbing: 
+<i>Reconstructing the spatio-temporal traffic dynamics from stationary detector data</i>
+Cooper@tive Tr@nsport@tion Dyn@mics 1 3.1-3.24.
+<a href="http://vwitme011.vkw.tu-dresden.de/TrafficForum/journalArticles/ctd02051401.pdf">PDF</a>
+<br></br>
+</li>
+
+</ol>
+
+</div>
+
+</div>
