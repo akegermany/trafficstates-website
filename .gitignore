@@ -2,5 +2,5 @@
 /README
 /upload.sh
 /.project
-/config.php
+www/config.php
 /chmod_for_www.sh
