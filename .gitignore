@@ -1,7 +1,7 @@
-/no_git
-/README
-/upload.sh
-/.project
+no_git
+README
+upload.sh
+.project
 www/config.php
 www/config_strato.php
-/chmod_for_www.sh
+chmod_for_www.sh
