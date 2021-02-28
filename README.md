@@ -1,6 +1,4 @@
 trafficstates-website
 =====================
 
-https://www.akesting.de/trafficstates/?site=start&lang=en
- 
-Illustrates the rich dynamics of traffic congestion pattern in traffic flow.
+Website https://www.akesting.de/trafficstates/?site=start&lang=en illustrating the rich dynamics of empirical traffic congestion pattern in traffic flow.
