@@ -1,6 +1,6 @@
 trafficstates-website
 =====================
 
-http://www.h2063376.stratoserver.net/trafficstates
+https://www.akesting.de/trafficstates/?site=start&lang=en
  
 Illustrates the rich dynamics of traffic congestion pattern in traffic flow.
